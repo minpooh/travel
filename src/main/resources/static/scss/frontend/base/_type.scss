@@ -10,6 +10,11 @@
 @include font-face($font-name, $font-family-path + $font-name + "-SemiBold", 500);
 @include font-face($font-name, $font-family-path + $font-name + "-Bold",600);
 
+@include font-face($font-logo-name, $font-logo-path + $font-logo-name + "-Light", 300);
+@include font-face($font-logo-name, $font-logo-path + $font-logo-name + "-Regular", 400);
+@include font-face($font-logo-name, $font-logo-path + $font-logo-name + "-SemiBold", 500);
+@include font-face($font-logo-name, $font-logo-path + $font-logo-name + "-Bold",600);
+
 @include font-face($font-hero-name, $font-hero-path + $font-hero-name + "Gothic-Regular", 400);
 @include font-face($font-hero-name, $font-hero-path + $font-hero-name + "Gothic-Bold", 600);
 

@@ -15,23 +15,27 @@
 // Color system
 //
 
+
+$yellow: #dbae3b;
+$lightgreen: #b0b87b;
+$green: #262f1e;
+$red: #a64f44;
+$gray: #565857;
+
 $gray-100:     #f7f5f5;
-$crimson:      #971A43; 
-$red:          #AC2755;
-$brown:        #824F5C;
 $cyan:         #2c9ca8;
 $blue:         #537ec5; 
 $bone:         #e4e2df;
 $grey:         #aaa5a4; 
 $mist:         #f7f7f7;  
 
-$primary:           $crimson;
-$secondary:         $brown;
-$success:           $cyan;
+$primary:           $yellow;
+$secondary:         $lightgreen;
+$success:           $green;
 $info:              $blue;
 $danger:            $red;
 $light:             $bone;
-$neutral:           $grey;
+$neutral:           $lightgreen;
 
 $text-color:        $gray-900; 
 $subtext-color:     $gray-600;
@@ -126,6 +130,8 @@ $font-family-path:      '../asset/fonts/pretendard/';
 $font-family-base:      'Pretendard', 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕','돋움', Dotum, sans-serif;
 $font-hero-name:        'MICE';
 $font-hero-path:        '../asset/fonts/mice/';
+$font-logo-name:        'FrankRuhlLibre';
+$font-logo-path:        '../asset/fonts/FrankRuhlLibre/';
 
 $link-hover-color:      $primary;
 $link-hover-decoration: none;
