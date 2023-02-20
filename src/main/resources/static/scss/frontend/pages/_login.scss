@@ -1,0 +1,62 @@
+/**
+ * page > _login.scss
+ *
+ * date: 2022.12.06
+ * author: danny
+ * description: 검색 페이지에서 사용되는 스타일이 정의된 파일입니다.
+ *
+ */
+
+ .login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba($black, .6);
+      z-index: -1;
+  }
+}
+
+.login-box {
+    padding: 20px;
+
+  @include media-breakpoint-up(md) {
+    width: 550px; 
+    padding: 50px 60px 55px;
+    margin-top: -40px;
+    background-color: rgba($black, .2);
+    border-radius: 50px;
+    // border: 1px solid $form-border-color;
+    // box-shadow: 1px 2px 4px #0000000f;
+  }
+
+  h2 {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-xl;
+      margin-bottom: 0px;
+  }
+ 
+  a, .form-label, .material-symbols-outlined, .form-check-label {
+      color: $gray-400;
+  }
+}
+
+.term-box {
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: rgba($black, .5);
+    color: $lighttext-color;
+    border-radius: $border-radius-default;
+    resize: both;
+    overflow: auto;
+    max-height: 30vh;
+}

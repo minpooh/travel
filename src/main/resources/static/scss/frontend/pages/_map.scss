@@ -1,0 +1,36 @@
+/**
+ * page > _term.scss
+ *
+ * date: 2023.02.01
+ * author: minjeong, danny
+ * description: 위치안내 페이지에서 사용되는 스타일이 정의된 파일입니다.
+ *
+ */
+
+.map {
+}
+
+.map-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: 10px;
+    font-family: $font-hero-name;
+}
+
+.map-text {
+    word-break: keep-all;
+    line-height: $line-height-lg;
+    color: $subtext-color;
+}
+
+#map {
+    height: 62vh;
+}
+
+.map-content-group {
+    padding-bottom: 40px;
+
+    .dashed {
+        border-right: 1px dashed $gray-300;
+    }
+}

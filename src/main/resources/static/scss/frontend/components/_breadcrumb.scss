@@ -1,0 +1,75 @@
+.breadcrumb {
+    padding: 0;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+    z-index: 5;
+    margin: 0 0 10px;
+    opacity: .75;
+
+    @include media-breakpoint-up(md) {
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+    }
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-sm;
+    opacity: .75;
+
+    + .breadcrumb-item::before {
+        content: "";
+        @include define-size(18px);
+        opacity: .4;
+        background-image: url(/resources/asset/images/icon/icon_next.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+        margin-right: 7px;
+
+        @include media-breakpoint-down(sm) {
+            @include define-size(15px);
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+            margin-bottom: 2px;
+        }
+    }
+
+    a {
+        font-size: $font-size-sm;
+        color: $white;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-sm;
+        }
+        
+    }
+
+    &.active {
+        opacity: 1;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .breadcrumb-home {
+            margin-top: -2px;
+        }
+    }
+
+}
+
+
+.breadcrumb-home {
+    display: block;
+    font-size: 0;
+    color: transparent;
+    @include define-size(17px);
+    background-image: url(/resources/asset/images/icon/icon_home.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+} 

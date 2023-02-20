@@ -1,0 +1,46 @@
+/**
+ * mixin > _hover.scss
+ *
+ * date: 2022.10.19
+ * author: danny, minjeong
+ * update: 2022.10.19 minjeong - hover mixin 생성
+ * description: hover에관련한 mixin이 정의된 파일입니다.
+ *
+ */
+
+
+@mixin hover-active {
+    &:hover {
+        @content;
+    }
+    &:active {
+        @content;
+    }
+}
+
+@mixin hover-focus {
+    &:hover {
+        @content;
+    }
+    &:focus {
+        @content;
+    }
+}
+
+@mixin hover-focus-active {
+    &:hover {
+        @content;
+    }
+    &:focus {
+        @content;
+    }
+    &:active {
+        @content;
+    }
+}
+
+@mixin hover {
+    &:hover {
+        @content;
+    }
+}

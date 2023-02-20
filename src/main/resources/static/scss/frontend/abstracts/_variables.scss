@@ -1,0 +1,315 @@
+// Variables
+//
+// 변수 작성은 부트스트랩의 포맷과 동일하게 작성합니다.
+// 변수를 작성할 때는 일관된 네이밍을 위해 '$component-state-property-size' 순서의 포맷을 지키도록합니다.
+// Ex: $nav-link-disabled-color, $modal-content-box-shadow-xs.
+//
+// 적절한 이유없이 변수를 선언하지 않도록 합니다.
+// 다음의 기준이 충족될 때에만 새로운 변수를 만들도록 합니다.
+// 1. 값이 적어도 두 번 반복된다.
+// 2. 값이 적어도 한 번은 수정될 가능성이 크다.
+// 3. 값의 실현이 변수와 관련되어 있다.
+// ** 기본적으로 절대 수정될 일이 없거나 한 군데에서만 사용되는 변수를 선언하는 것에는 아무 의미가 없습니다.
+
+//
+// Color system
+//
+
+$gray-100:     #f7f5f5;
+$crimson:      #971A43; 
+$red:          #AC2755;
+$brown:        #824F5C;
+$cyan:         #2c9ca8;
+$blue:         #537ec5; 
+$bone:         #e4e2df;
+$grey:         #aaa5a4; 
+$mist:         #f7f7f7;  
+
+$primary:           $crimson;
+$secondary:         $brown;
+$success:           $cyan;
+$info:              $blue;
+$danger:            $red;
+$light:             $bone;
+$neutral:           $grey;
+
+$text-color:        $gray-900; 
+$subtext-color:     $gray-600;
+$lighttext-color:   $gray-500;
+$bg-color:          $gray-100; 
+$border-color:      $gray-200;  
+$link-color:        $dark;
+
+$theme-colors: (
+  "primary":        $primary,
+  "secondary":      $secondary, 
+  "success":        $success,
+  "info":           $info,
+  "danger":         $danger,
+  "light":          $light,
+  "dark":           $dark,
+  "neutral":        $neutral,
+  "subtext":        $subtext-color,
+  "lighttext":      $lighttext-color,
+  "text":           $text-color,
+);
+
+//
+// Font Size
+//
+$font-size-base:    1rem;
+$font-size-xs:      $font-size-base * .75;
+$font-size-sm:      $font-size-base * .875;
+$font-size-md:      $font-size-base * 1.15;
+$font-size-lg:      $font-size-base * 1.25;
+$font-size-xl:      $font-size-base * 1.75;
+$font-size-xxl:     $font-size-base * 2;
+
+$font-size-md-5:    $font-size-base * 1.5;
+
+$font-size: ();
+$font-size: map-merge((
+  "base": $font-size-base,
+  "xs": $font-size-xs,
+  "sm": $font-size-sm,
+  "md": $font-size-md,
+  "lg": $font-size-lg,
+  "xl": $font-size-xl,
+), $font-size);
+
+$font-weight-light:     300;
+$font-weight-regular:   400;
+$font-weight-medium:    500;
+$font-weight-bold:      600;
+
+$font-weight: ();
+$font-weight: map-merge((
+  "light":              $font-weight-light,
+  "regular":            $font-weight-regular,
+  "medium":             $font-weight-medium,
+  "bold":               $font-weight-bold,
+), $font-weight);
+
+$line-height-xs:        1.2em;
+$line-height-sm:        1.4em;
+$line-height-md:        1.6em;
+$line-height-lg:        1.8em;
+$line-height-xl:        2em;
+$line-height-base:      $line-height-md;
+
+$line-height: (); 
+$line-height: map-merge((
+  "xs":                 $line-height-xs,
+  "sm":                 $line-height-sm,
+  "md":                 $line-height-md,
+  "lg":                 $line-height-lg,
+  "xl":                 $line-height-xl,
+), $line-height);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1020px,
+  xxl: 1280px
+);
+
+// -- fonts
+$body-color:            $dark;
+$font-name:             'Pretendard';
+$font-family-path:      '../asset/fonts/pretendard/';
+$font-family-base:      'Pretendard', 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕','돋움', Dotum, sans-serif;
+$font-hero-name:        'MICE';
+$font-hero-path:        '../asset/fonts/mice/';
+
+$link-hover-color:      $primary;
+$link-hover-decoration: none;
+
+
+// --Form
+$form-control-boxshadow-size:  0 0 0 2px;
+$form-control-boxshadow-color: rgba($secondary, .25);
+$form-active-color: rgba($secondary, .1);
+$form-name-color: #999;
+
+// -- Buttons
+$btn-font-size-sm: $font-size-sm; 
+$btn-font-size-md: $font-size-base;
+$btn-icon-padding: .375rem .5rem;
+
+// Boxshadow set
+$box-shadow-default-size:  0 1px 3px;
+$box-shadow-soft-size: .2rem .2rem 3rem;
+$box-shadow-default-color: rgba($dark, .1);
+
+$button-box-shadow-size: 1px 1px 3px 1px;
+$button-box-shadow-color: rgba($dark, .1);
+
+// Z-index list
+$zindex-sidebar:        60;
+$zindex-header:         500;
+$zindex-searchbox:      80;
+$zindex-dropdown-arrow: 100;
+$zindex-dropdown-menu:  100;
+$zindex-toggler:        400;
+$zindex-sitemap:        600;
+
+//transition
+$transition-slow:    all .2s ease-in-out;
+$transition-base:    all .15s ease-in-out;
+$transition-fast:    all .1s ease-in-out;
+
+// -- form
+$form-box-shadow:          none;
+$form-border-color:        rgba($dark, .2);
+$form-active-border-color: $primary; 
+
+$input-padding-y: .75rem;
+$input-padding-x: 1rem;
+$input-border-radius: 0;
+
+$form-check-input-checked-bg-color:  $primary;
+$form-check-input-checked-border-color:  $primary;
+
+// Border set
+$border-color:          #e3e2e1;
+$border-default:        1px solid $border-color;
+$border-opacity:        1px solid rgba($white, .15);
+$border-radius-pill:    3rem;
+$border-radius-default: 5px;
+$border-radius-lg: 15px;
+
+// -- Modals
+$modal-md-width:           30rem;
+$modal-lg-width:           720px;
+$modal-xl-width:           920px;
+$modal-header-padding-top: 2rem;
+$modal-body-padding-y:     1rem;
+$modal-body-padding-x:     2rem;
+$modal-border-radius:      $border-radius-default;
+$modal-border-color:       $border-color;
+$modal-close-size:         1.4rem;
+$modal-close-position-y:   1.5rem;
+$modal-close-position-x:   1.5rem;
+$modal-boxshadow:          $box-shadow-soft-size $box-shadow-default-color;
+
+// -- Header
+$header-bg-color:                     $white;
+$header-height:                       80px;
+$header-container-width:              auto;
+$header-height-mob:                   60px;
+$header-transition-header-duration:   .3s;
+$header-transition-opacity-duration:  .2s;
+$header-menu-height:                  430px;
+$header-fontsize:                     1.1rem;
+
+// -- Footer
+$footer-height:                       170px;
+
+// -- Container & Section & Wrapper
+$main-container-width:        1480px;
+$container-width:             1420px;
+$section-spacing:             60px;
+// $main-slide-height:        100vh;
+$wrapper-height:              calc(100vh - #{$header-height + $footer-height});
+$main-slide-height:           100vh;
+$main-title-width:            220px;
+
+
+// -- Sidebar
+$sidebar-header-height:    110px;
+$sidebar-width:            240px;
+$sidebar-spacing:          60px;
+$sidebar-bg-color:         $white;
+$sidebar-border-color:     $border-color;
+$sidebar-text-color:       $primary;
+$sidebar-minimum-width:    70px;
+$sidebar-list-item-height: 50px;
+
+$sidebar-toggler-size:         2.2rem; 
+$sidebar-toggler-position:     .5rem;
+$sidebar-toggler-text-spacing: 1rem;
+$sidebar-toggler-color:        $dark;
+
+// -- Breadcrumb
+$breadcrumb-divider: '/resources/asset/images/icon/icon_next_whtie.png';
+
+// -- Dropdown
+$dropdown-min-width:    10rem;
+$dropdown-box-shadow-size: 0;
+$dropdown-box-shadow-color: rgba($dark, .1);
+
+$dropdown-menu-padding-sm: .5rem .75rem;
+$dropdown-menu-padding: .5rem 1.25rem;
+$dropdown-menu-padding-lg: .5rem 1.5rem;
+
+// -- Tooltip
+$tooltip-padding: .5rem .75rem;
+
+// scss-docs-start badge-variables
+$badge-font-size:                   .75rem;
+$badge-color:                       $white;
+$badge-padding-y:                   .35em;
+$badge-padding-x:                   .5em;
+$badge-border-radius:               0;
+
+// -- Cover
+$cover-height: 220px;
+$cover-shape-height: 120px;
+
+// - Log
+$log-spacing: .5rem;
+
+// - List
+$list-row-number-width: 3rem;
+
+// - Switch
+$switch-width: 72px;
+$switch-height: 30px;
+
+// - pagination
+$pagination-hover-color: rgba($form-control-boxshadow-color, .05);
+
+// - Accordion
+$accordion-body-padding-y:                0;
+$accordion-body-padding-x:                0;
+
+$accordion-button-padding-y:              0;
+$accordion-button-padding-x:              0;
+$accordion-button-color:                  $body-color;
+$accordion-button-bg:                     transparent;
+$accordion-button-active-bg:              transparent;
+$accordion-button-active-color:           $body-color;
+
+$accordion-icon-active-color:             #971a43;
+$accordion-icon-transition:               transform .2s ease-in-out;
+$accordion-icon-transform:                rotate(-180deg);
+
+// - organization
+$org-item-height: 40px;
+$org-branch-height: 15px;
+
+// scss-docs-start table-variables
+$table-cell-padding-y:        .5rem;
+$table-cell-padding-x:        1rem;
+$table-cell-padding-y-sm:     .25rem !default;
+$table-cell-padding-x-sm:     .75rem !default;
+
+$table-color:                 $subtext-color;
+
+$table-striped-color:         $border-color;
+
+$table-hover-color:           $body-color;
+
+$table-border-width:          1px;
+$table-border-color:          $border-color;
+
+$table-group-separator-color: $gray-300;
+
+// - hero
+$hero-height: 200px;

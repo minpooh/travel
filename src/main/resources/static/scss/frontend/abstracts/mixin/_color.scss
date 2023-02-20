@@ -1,0 +1,28 @@
+/**
+ * mixin > _color.scss
+ *
+ * date: 2019.07.31
+ * author: danny
+ * update: 2019.07.31 danny - 파일 분리
+ * description: color에관련한 mixin이 정의된 파일입니다.
+ *
+ */
+
+/*---------------------------------------------------------------------*\
+  mixin for theme color varaient
+  background color와 그에 관련된 a, button tag의 style을 정의하는 mixin
+  @param {string} $parent - 요소의 'key'
+  @param {color-property} $color - 요소의 'value'
+  * 주로 map을 반복하여 사용합니다. 
+\*---------------------------------------------------------------------*/
+@mixin bg-variant($parent, $color) {
+	#{$parent} {
+		background-color: $color!important;
+	}
+	a#{$parent},
+	button#{$parent} {
+		@include hover-focus {
+			background-color: darken($color, 25%);
+	  	}
+	}
+}

@@ -1,0 +1,56 @@
+// @ description: setting card list style
+
+.media {
+    color: $dark;
+    box-shadow: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+
+    @include hover-focus {
+        .media-title {
+            color: $primary;
+        }
+    }
+}
+
+.media-thumbnail {
+    height: 220px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: $border-radius-default;
+}
+
+.media-title {
+    font-size: 1.15rem;
+    line-height: $line-height-sm;
+    margin: 10px 0 5px;
+    font-weight: $font-weight-regular;
+    display: inline-block;
+    transition: none;
+    letter-spacing: .25px;
+    @include ellipsis((2*$line-height-md), 2); 
+}
+
+.media-date {
+    font-size: $font-size-sm;
+    color: $lighttext-color;
+}
+
+.media-card {
+    height: 100%;
+    border: $border-default;
+    border-radius: 8px;
+    
+    .media-info {
+        padding: 12px;
+        border-top: $border-default;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .media-title { margin: 0; }
+    .media-thumbnail {border-radius: 0;}
+}

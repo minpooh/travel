@@ -1,0 +1,97 @@
+// @ description: setting dropdown
+.dropdown-menu {
+    margin: .5rem 0;
+    font-size: $font-size-sm;
+    min-width: $dropdown-min-width;
+    border: 0;
+    border: $border-default;
+    z-index: $zindex-dropdown-menu;
+
+    .dropdown-header {
+        color: $subtext-color;
+        font-weight: 400;
+        font-size: $font-size-sm;
+        padding: 0 1.25rem;
+        white-space: normal;
+    }
+    
+    & > a {
+        display: block;
+        padding: $dropdown-menu-padding;
+    }
+
+}
+
+.dropdown-item {
+    color: $body-color;
+    font-weight: $font-weight-light;
+    padding: $dropdown-menu-padding;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    @include transition($transition-fast);
+
+    @include hover-focus {
+        color: $body-color;
+        background-color: $form-active-color;
+    }
+} 
+
+.dropdown-toggle {
+    &::after {
+        display: none;
+    }
+}
+
+.dropdown-divider {
+    margin: .25rem 0;
+    border-color: $gray-200;
+}
+
+
+
+.dropdown-share {
+    min-width: 220px; 
+    position: relative;
+    margin-top: 15px!important;
+   
+    &::after {
+      @include pseudo-element();
+      @include define-size(13px);
+      position: absolute;
+      right: 17px;
+      top: -7px;
+      transform: rotate(45deg);
+      background-color: $white;
+      border: 1px solid $gray-300;
+      z-index: 5;
+     border-right: 0;
+     border-bottom: 0;
+    }
+}
+   
+.dropdown-menu-inner {
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+.dropdown-item {
+    padding: 5px 25px;
+    font-size: $font-size-sm; 
+    color: $subtext-color;
+
+    @include hover-focus-active {
+        background-color: transparent;
+        color: $primary;
+    }
+}
+
+.btn-ellipsis {
+    max-width: 120px; 
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

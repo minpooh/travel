@@ -1,0 +1,434 @@
+/**
+ * page > _main.scss
+ *
+ * date: 2022.11.29
+ * author: danny, minjeong
+ * description: 메인페이지에서 사용되는 스타일이 정의된 파일입니다.
+ *
+ */
+
+ .main-hero {
+    font-family: $font-hero-name;
+    height: 75vh;
+    position: relative;
+
+    .mainSwiper {
+        @include define-size(100%);
+
+        .swiper-slide {
+            @include define-size(100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    &-backdrop {
+        position: absolute;
+        z-index: 5;
+        background-image: linear-gradient(to bottom, rgba($black, .25), rgba($black, .75));
+        top: 0; left: 0; right: 0; bottom: 0;
+    }
+ }
+
+ .main-banner-caption {
+    // left: $caption-spacing;
+    // right: $caption-spacing;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    color: $white;
+    bottom: 15%;
+
+    .caption-inner {
+        padding: 0 10px;
+        width: 100%;
+        max-width: $main-container-width;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .banner-title {
+        font-weight: $font-weight-light;
+        border-bottom: 1px solid rgba($border-color, .5);
+        line-height: 2.5em;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+
+        .subtitle {letter-spacing: -1px; font-size: 40px;}
+        .title {font-weight: $font-weight-bold; font-size: 45px;}
+
+    }
+
+    .banner-desc {
+        color: $gray-200;
+        font-size: $font-size-md;
+        line-height: $line-height-lg;
+        opacity: .8;
+    }
+}
+
+
+.swiper-control {
+    z-index: 100;
+    opacity: 1;
+    cursor: pointer;
+    @include define-size(55px);
+    border-radius: 50%;
+    border: 1px solid rgba($border-color, .5);
+    position: absolute;
+    bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.prev { left: -80px; }
+    &.next { right: -80px; }
+
+    @include hover-focus {
+        background-color: $border-color;
+
+        .swiper-icon path{
+            stroke: $text-color!important;
+        }
+    }
+}
+
+.swiper-icon {
+    @include define-size(55px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule-bar {
+    position: absolute;
+    background-color: rgba($black, .4);
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 15;
+
+    .schedule-label {
+        display: flex;
+        align-items: center;
+        color: $white;
+    }
+    
+    .schedule-icon {
+        @include define-size(28px);
+        fill: $primary;
+        display: flex;
+        align-items: center;
+        background-image: url("/resources/asset/images/icon/icon_schedule.svg");
+    }
+
+    .label {
+        color: $primary;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-lg;
+        margin-left: 10px;
+        margin-right: 20px;
+        font-family: $font-name;
+        letter-spacing: .5px;
+    }
+
+}
+
+.scheduleSwiper {
+    margin-left: 0;
+    font-size: $font-size-md;
+    color: $gray-200;
+    height: 25px;
+
+    .swiper-slide {
+        @include ellipsis((1*$line-height-md), 1);
+
+        .desc {
+            opacity: .75;
+        }
+    }
+}
+
+.schedule-control-group {
+    display: flex;
+    gap: 8px; 
+}
+
+.schedule-control {
+    @include define-size(45px);
+    border: 1px solid rgba($border-color, .4);
+    border-radius: 0.25rem;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        fill: $border-color;
+    }
+
+    @include hover-focus {
+        background-color: $border-color;
+
+        svg {
+            fill: $text-color;
+        }   
+    }
+}
+
+.middleBannerSwiper {
+    @include define-size(100%, 180px);
+    border-radius: 10px;
+    font-family: $font-hero-name;
+    line-height: 2.5em;
+
+    .subtitle {font-size: 28px; margin-top: -8px; margin-bottom: 8px; }
+    .title {font-size: 32px;}
+
+    .swiper-wrapper {
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+    }
+}
+ 
+.main-section {
+    margin: 60px 0;
+    position: relative; 
+}
+
+.main-container {
+    padding: 0 10px;
+    max-width: $main-container-width;
+    margin: 0 auto;
+}
+
+.main-section-board {
+    gap: 100px;
+    display: flex;
+    align-items: stretch;
+
+    .main-section-col {
+        flex: 1 1 auto;
+        width: 33.333%;
+
+        &:not(:last-child) {
+            position: relative;
+            &::after {
+                @include pseudo-element;
+                position: absolute;
+                width: 1px;
+                top: 0;
+                bottom: 0;
+                right: -50px;
+                background-color: #efefef;
+            }
+        }
+    }
+}
+
+.main-board-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.board-item-hero {
+
+    .thumbnail {
+        width: 100%;
+        aspect-ratio: 17/9;
+        background-size: cover;
+    }
+    .category {
+        font-family: $font-hero-name;
+        font-size: $font-size-md;
+        color: $subtext-color;
+    }
+
+    .title {
+        font-family: $font-hero-name;
+        font-size: $font-size-md-5;
+        line-height: $line-height-sm;
+        margin: 10px 0 10px;
+        font-weight: $font-weight-bold;
+        word-break: keep-all;
+        padding-right: 30px;
+        @include ellipsis((2*$line-height-sm), 2);
+    }
+
+    .date {
+        font-size: $font-size-base;
+        color: $subtext-color;
+    }
+}
+
+.board-item-other {
+    border-top: 1px dashed $border-color;
+    padding-top: 20px;
+    margin-top: 20px;
+
+    & > li {
+        list-style-type: none;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .title {
+            @include ellipsis((1*$line-height-md), 1);
+            font-size: $font-size-md;
+            color: $subtext-color;
+            padding-right: 30px;
+        }
+
+        .date {
+            color: rgba($subtext-color, .75);
+        }
+    }
+}
+
+.middle-banner-control-group {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    color: $white;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+
+    .middle-banner-navigation {
+        display: flex; 
+        align-items: center; 
+        width: auto;
+    }
+
+    .slash {
+        margin: 0 15px;
+        position: relative;
+
+        &::after {
+            @include pseudo-element;
+            width: 1px;
+            height: 16px;
+            background: #fafafa;
+            -webkit-transform: rotate(47deg);
+            transform: rotate(47deg);
+            opacity: .75;
+        }
+    }
+
+    .middle-control {
+        @include define-size(40px);
+        display: flex;
+        align-items: center;
+
+        svg {fill: $white;}
+    }
+}
+
+.middle-divide-bg {
+    background-image: url("/resources/asset/images/main_middle_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 5px;
+}
+
+.graphic-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    img { width: 70px;}
+
+    .graphic-title {
+        text-align: center;
+        color: $primary;
+        font-size: $font-size-lg;
+        font-family: $font-hero-name;
+        font-weight: $font-weight-bold;
+        margin: 20px 0 10px;
+    }
+
+    .graphic-desc {
+        text-align: center;
+        color: $subtext-color;
+        font-size: $font-size-base;
+        font-family: $font-hero-name;
+    }
+
+    .graphic-link {
+        display: flex;
+        align-items: center;
+        color: $subtext-color;
+        margin-top: 10px;
+
+        .graphic-link-text {
+            color: #888;
+        }
+
+        .graphic-link-icon {
+            @include define-size(0, 22px);
+            overflow: hidden;
+            width: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease-out, width 0.2s ease-out;
+            direction: rtl;
+            margin-left: 4px;
+
+            svg {
+                display: block;
+                width: 100%;
+                @include define-size(22px);
+            }
+        }
+
+        @include hover-focus {
+
+            .graphic-link-icon {
+                opacity: 1;
+                @include define-size(22px);
+                transition: opacity 0.4s ease-out, width 0.2s ease-out;
+                padding-left: 2px;
+            }
+        }
+        
+        svg path { stroke: #888; }
+    }
+
+}
+
+.main-section {
+    .card-vertical {
+        height: 330px;
+        background-image: url("/resources/asset/images/logo_bg.png");
+        background-position: right -40px bottom -55px;
+        background-repeat: no-repeat;
+        background-size: 220px;
+        border-radius: 10px;
+
+        .card-title {
+            font-size: $font-size-lg;
+        }
+
+        .card-foot {
+            font-size: $font-size-base;
+            color: $subtext-color;
+        }
+    }
+}

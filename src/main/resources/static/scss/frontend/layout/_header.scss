@@ -1,0 +1,285 @@
+// description: setting header
+.header {
+    box-sizing: content-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-header;
+    background-color: $header-bg-color;
+
+    .nav-link {
+        font-size: 1.1rem;
+        transition: all .3s;
+        font-family: $font-hero-name;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    @include media-breakpoint-up(xl) { 
+        height: $header-height;
+        position: relative; 
+    }
+ 
+}
+
+.header-inner {
+    z-index: $zindex-header;
+    background-color: $header-bg-color;
+    padding: 0 15px;
+    // border-bottom: $border-default;
+}
+
+.navbar-toggler {
+    padding: 0;
+    border: 0;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("/resources/asset/images/icon_menu.svg");
+    }
+}
+
+.header-btn-group {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+
+    & > li {
+        svg {
+            fill: $text-color;
+            transition: all $header-transition-opacity-duration;
+        }
+
+        &.active {
+            svg {
+                fill: $primary;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        gap: 30px;
+    }
+}
+
+.header-menu {
+    width: 100%;
+    height: $header-height-mob;
+    max-width: $header-container-width;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+        position: fixed;
+        top: 0; 
+        left: 0;
+        right: 0;
+    }
+
+    .nav-link {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item {
+        position: relative;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        gap: 20px;
+        padding: 0 20px;
+        height: $header-height;
+        position: relative;
+        flex-grow: 1;
+
+        .navbar-nav {
+            gap: 35px;
+            align-items: center;
+            justify-content: center;
+
+            .nav-link {
+                color: $text-color;
+                padding: 0.75rem 1rem;
+
+            }
+
+        }
+    }
+
+    .header-sub-menu {
+        position: absolute;
+        top: $header-height + 10;
+        left: 50%;
+        padding: 0px;
+        z-index: 5;
+        text-align: center;
+        transform: translateX(-50%);
+        width: 100%;
+        opacity: 0;
+        height: 0;
+        transition: all $header-transition-opacity-duration 0s;
+        visibility: hidden;
+        min-width: 120px;
+        list-style: none;
+        font-size: .95rem;
+
+        a {
+            opacity: .5;
+            transition: all .3s;
+            margin: 1rem 0;
+            display: block;
+
+            @include hover-focus {
+                color: $primary;
+            }
+
+            &.on {
+                color: $primary;
+            }
+        }
+
+    }
+}
+
+.gnb-bg {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: $header-height-mob + 1;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    z-index: 10;
+    opacity: 0;
+    transition: height $header-transition-header-duration ease-in-out, opacity $header-transition-opacity-duration ease-in-out;
+
+    &.open {
+        height: $header-menu-height;
+        opacity: 1.0;
+    }
+    
+    @include media-breakpoint-up(lg) {
+        top: $header-height;
+        border-top: 1px solid $border-color;
+    }
+}
+
+.header-list {
+    display: none;
+    height: 100%;
+
+    .nav-link {
+        height: 100%; 
+
+        &.on {
+            color: $primary;
+        }
+        
+        &::after {
+           @include pseudo-element;
+           width: 0;
+           height: 2px;
+           background-color: $primary;
+           position: absolute;
+           left: 50%;
+           bottom: -1px;
+           transition: all $header-transition-opacity-duration;
+           transform: translateX(-50%);
+        }
+   }
+
+    .nav-item {
+        height: 100%; 
+
+        &.active {
+            .nav-link {
+                color: $primary;
+                transition: all $header-transition-opacity-duration;
+
+                &::after {
+                    width: 60px;
+                }
+            }
+
+            a {
+                opacity: 1;
+            }
+        }
+    }
+    &.open {
+        .header-sub-menu {
+            height: 250px;
+            visibility: visible;
+            opacity: 1.0;
+            z-index: 15;
+            transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out $header-transition-opacity-duration;
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        display: flex;
+    }
+}
+
+.header-user-icon, .header-menu-icon, .header-search-icon {
+    @include define-size(25px);
+    display: block;
+
+    @include media-breakpoint-up(xl) {
+        @include define-size(30px);
+    }
+}
+
+.btn-dropdown-login { 
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    font-weight: $font-weight-regular!important;
+    display: flex;
+    justify-content: center;
+
+
+    .header-user-icon {
+        @include define-size(22px);
+    }
+
+    @include media-breakpoint-up (xl) {
+        border-radius: 30px;
+        border: 1px solid #333;
+        padding: .55rem 1rem!important;
+        margin: 10px 0;
+    }
+
+}
+
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba($black,0.7);
+    z-index: 2;
+    transition: all $header-transition-header-duration;
+
+    &.open {
+        visibility: visible;
+        opacity: 1;
+    }
+}

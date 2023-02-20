@@ -1,0 +1,68 @@
+/**
+ * select.scss
+ *
+ * date: 2019.08.09
+ * author: danny
+ * description: select에 대한 스타일 입니다.
+ * select는 html의 기본 form element 중의 하나입니다.
+ * 해당 스타일은 select의 custimizing을 위한 스타일시트입니다.
+ * 
+ */
+
+
+/*------------------------------------*\
+  select
+  arrow button customizing
+\*------------------------------------*/
+select {
+	&.form-control {
+		appearance: none;
+		padding-right: 2rem;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABGklEQVR4Ae3RAcZCQRiF4buDfwshBGi+2UQgcIGAVtpSIuS/KyilG+UTcbk6zIH3GQBm3mM6AAAAAAAAAACA+eqf/yZBXcV/2XeCVPYx1FXj/FjGUMd45AQp/1HHGGLZNL+e61jHnKDmv8652YT1IvPfE2LX/Sh27/ycsF60yT/lk58JYn6eU4MJccjnlAmZ/33i0OAH4jg9Qcw/5g9YJpS+m6n0xvzpCfVe+nn59S7kGyYo+YYJWz3fO+E2PaFs9XzPhMy/6fmWCXq+YUJs9HzrhLh+JsQmrnq+bYKeb52g53snXPR88wQ93z9Bz/dP0PP9E/R89wQ93zpBz7dO0POtE/R86wQ93zpBzzdP+MoHAAAAAAAAAADAExTnTW20AtjhAAAAAElFTkSuQmCC);
+		background-size: 16px;
+		background-repeat: no-repeat;
+		background-position: 95% 50%;
+	}
+}
+
+/*------------------------------------*\
+  view-limit
+  테이블이나 리스트와같은 목록에서 
+  아이템 갯수를 선택할 수 있도록 하는 컴퍼넌트
+\*------------------------------------*/
+.view-limit {
+	padding: 0;
+
+	 // 1 : select box의 arrow icon을 보이지 않게 합니다.
+	select {
+		appearance: none;  // 1
+		font-weight: $font-weight-regular;
+		border: 1px solid transparent;
+		height: 100%;
+		padding: 0;
+		background-size: 16px;
+		background-color: $gray-200;
+		background-repeat: no-repeat;
+		background-position: 90% 50%;
+		font-size: $font-size-sm;
+		color: $subtext-color;
+		padding: .35rem 2rem .35rem .75rem;
+		border-radius: $input-border-radius;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABGklEQVR4Ae3RAcZCQRiF4buDfwshBGi+2UQgcIGAVtpSIuS/KyilG+UTcbk6zIH3GQBm3mM6AAAAAAAAAACA+eqf/yZBXcV/2XeCVPYx1FXj/FjGUMd45AQp/1HHGGLZNL+e61jHnKDmv8652YT1IvPfE2LX/Sh27/ycsF60yT/lk58JYn6eU4MJccjnlAmZ/33i0OAH4jg9Qcw/5g9YJpS+m6n0xvzpCfVe+nn59S7kGyYo+YYJWz3fO+E2PaFs9XzPhMy/6fmWCXq+YUJs9HzrhLh+JsQmrnq+bYKeb52g53snXPR88wQ93z9Bz/dP0PP9E/R89wQ93zpBz7dO0POtE/R86wQ93zpBzzdP+MoHAAAAAAAAAADAExTnTW20AtjhAAAAAElFTkSuQmCC);
+		box-shadow: none;
+		outline: none;
+
+		@include transition;
+
+		@include hover-focus-active {
+			display: inline-block;
+			border-color: $border-color;
+			border-radius: $input-border-radius;
+		}
+		
+		// ie10에서 select box의 arrow icon을 보이지 않게 합니다.
+		&::-ms-expand {
+			display: none;
+		}
+	}
+}

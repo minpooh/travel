@@ -1,0 +1,97 @@
+/**
+ * switch.scss
+ *
+ * date: 2019.08.05
+ * author: danny
+ * description: switch에 대한 스타일 입니다.
+ * switch는 체크박스와 같은 원리이지만, on/off의 의미를 분명히 나타낼때 사용합니다.
+ *
+ */
+
+
+/*------------------------------------*\
+  switch
+  기본 스타일
+\*------------------------------------*/
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: $switch-width;
+	height: $switch-height;
+	cursor: pointer;
+
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+
+		&:checked + .slider {
+			background-color: $secondary;
+		}
+		&:checked + .slider::before {
+			transform: calc($switch-width / 2);
+		}
+
+		&:checked ~ .switch-text {
+			&::before {
+				opacity: 1;
+			}
+
+			&::after {
+				opacity: 0;
+			}
+		}
+	}
+}
+.switch-text {
+	&::before {
+		content: 'ON';
+		position: relative;
+		z-index: 100;
+		opacity: 0;
+		float: left;
+		color: $white;
+		transition: $transition-base;
+		padding-left: 13px;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-bold;
+		transition: $transition-base;
+	}
+
+	&::after {
+		content: 'OFF';
+		position: relative;
+		z-index: 100;
+		float: right;
+		padding-right: 10px;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-bold;
+		transition: $transition-base;
+	}
+}
+// switch 내부의 input을 숨깁니다.
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $gray-400;
+	transition: $transition-base;
+	border-radius: $input-border-radius;
+
+	&::before {
+		@include pseudo-element;
+		@include define-size(22px);
+
+		position: absolute;
+		left: 4px;
+		bottom: 4px;
+		background-color: $white;
+		transition: $transition-base;		
+		border-radius: $input-border-radius;
+	}
+}
+

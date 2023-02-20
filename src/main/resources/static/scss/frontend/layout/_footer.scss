@@ -1,0 +1,66 @@
+// @ description: setting footer
+
+.footer {
+    background-color: $mist;
+    padding: 40px 0 30px;
+    color: $gray-600;
+    word-break: keep-all;
+
+    strong{
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 5px;
+        line-height: $line-height-sm;
+    }
+
+    @include media-breakpoint-up(md) {
+        height: $footer-height;
+    }
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+    }
+}
+
+.dropdown-footer-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $subtext-color;
+    margin-bottom: 20px;
+    padding: 10px 12px; 
+    border-radius: 5px;
+    border: $border-default;
+    background-color: $white;
+
+    & + .dropdown-menu {
+        width: 230px;
+
+        .dropdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 15px;
+            font-size: $font-size-base;
+
+            .las {
+                color: rgba($lighttext-color, .75);
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        width: 230px;
+    }
+}

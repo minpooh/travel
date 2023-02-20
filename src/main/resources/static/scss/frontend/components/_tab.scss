@@ -1,0 +1,105 @@
+/**
+ * tab.scss
+ *
+ * date: 2022.12.16
+ * author: danny
+ * description: tab에 관한 스타일 정의입니다.
+ *
+ */
+
+
+.nav-tab-page {
+	border: 1px solid #ddd;
+	padding: 0;
+	display: flex;
+	width: fit-content;
+	justify-content: center;
+	margin: 0 auto 60px;
+	border-radius: 50px;
+	text-align: center;
+	background-color: $white;
+	box-shadow: 3px 3px 5px rgba($black, .05);
+	margin-top: -30px;
+	position: relative;
+	z-index: 5;
+	
+	.nav-item {
+		flex: 1 0 0%;
+		.nav-link {
+			background-color: transparent;
+			border: 0;
+			color: $lighttext-color;
+			padding: 1rem 2rem;
+			font-size: $font-size-lg;
+			position: relative;
+			white-space: nowrap;
+
+			&::after {
+				@include pseudo-element;
+				@include define-size(1px, 20px);
+				background-color: $gray-200;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		.nav-link.active {
+			color: $primary;
+			transition: all $header-transition-opacity-duration;
+			opacity: 1;
+			font-weight: $font-weight-medium;
+
+		}
+
+
+		@include hover-focus {
+			.nav-link.active {
+				color: $primary;
+				transition: all $header-transition-opacity-duration;
+				opacity: 1;
+	
+			}
+		}
+
+	}
+}
+
+.tab-pane {
+	padding: 0;
+}
+  
+.view-tab-content {
+	img {max-width: 100%;}
+	
+	.nav-tab-page {
+		border-bottom: 1px solid rgba($gray-300, .25);
+		padding-top: 20px;
+
+		@include media-breakpoint-up(lg) {
+			margin: 30px -30px 0;
+			padding: 0px 30px;
+		}
+  	}
+
+	.tab-content {
+
+		@include media-breakpoint-up(lg) {
+			padding: 10px 30px;
+			margin: 0 -30px;
+		}
+	}
+}
+  
+.tab-support {
+	width: 760px;
+}
+
+.tab-edu {
+	width: 570px;
+}
+
+.tab-family {
+	width: 500px;
+}

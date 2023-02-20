@@ -1,0 +1,66 @@
+/**
+ * page > _greeting.scss
+ *
+ * date: 2023.01.31
+ * author: minjeong
+ * description: 인사말 페이지에서 사용되는 스타일이 정의된 파일입니다.
+ *
+ */
+
+
+.greeting-main {
+    position: relative;
+    height: auto;
+    padding-bottom: 230px;
+    font-family: $font-hero-name;
+
+    .text {
+        font-size: $font-size-md;
+        line-height: $line-height-xl;
+        margin-bottom: 30px;
+        color: $subtext-color;
+        text-indent: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.greeting-sign {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: right;
+    align-items: flex-end;
+    font-size: $font-size-md;
+    color: $subtext-color;
+}
+
+.greeting-bg {
+    @include define-size(100%, 440px);
+    padding: 80px 70px;
+    line-height: $line-height-lg;
+    background-image: url("/resources/asset/images/duksung_image_00.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    z-index: -1;
+
+    &::after {
+        @include define-size(100%, 440px);
+        position: absolute;
+        content: "";
+        display: block;
+        left: 0;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, rgba($white, 1) 0%, rgba($white, 0.5) 100%);
+    }
+}
+
+.greeting-title-bar {
+    border-left: 7px solid $primary;
+    padding-left: 1rem; 
+}

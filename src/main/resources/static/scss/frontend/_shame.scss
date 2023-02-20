@@ -1,0 +1,93 @@
+// @ description: shame.scss
+// 당장 scss 문법을 적용하기 어려운 경우나, 테스트로 스타일을 작성해야 하는 경우 사용되는 파일입니다.
+// 테스트가 끝나 후에는 해당 css를 바로 삭제해 주시기 바랍니다.
+// 이 파일에 있는 scss는 해당 스타일의 용도에 따라서 정리되어진 후 옮겨져야 합니다.
+
+.blank-container {
+    background-color: $gray-100;
+    text-align: center;
+    padding: 60px;
+    color: $subtext-color;
+    margin-top: 20px;
+}
+
+.circle {
+    border-radius: 100%!important;
+}
+
+.over-hidden {
+    overflow: hidden;
+}
+
+.head-container {
+    height: 300px;
+    background-image: url("/asset/images/banner_duksung.jpeg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.table-item {
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    
+    .row > [class*="col"]  {
+        padding: 25px 15px;
+        position: relative;
+
+        &:not(:last-child)::after {
+            @include pseudo-element;
+            @include define-size(1px, 15px);
+            background-color: rgba($black, .25);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.card-table-header {
+    background-color: $secondary;
+    font-weight: $font-weight-medium;
+    color: $white;
+
+    .row > [class*="col"]  {
+        padding: 15px;
+
+        &:not(:last-child)::after {
+            background-color: rgba($white, .25);
+        }
+    }
+}
+
+.card-table-item {
+    background-color: #f5f3f3;
+    margin-bottom: 5px;
+}
+
+.paper {
+    padding: 30px;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba($black, .05);
+
+
+    .form-animate {
+        margin-top: 0;
+    } 
+
+    .btn {
+        border-radius: 0;
+    }
+}
+
+.paper-section {
+
+    &:not(:first-child) {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px dashed $border-color;
+    }
+}

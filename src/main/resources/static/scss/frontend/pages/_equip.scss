@@ -1,0 +1,72 @@
+/**
+ * page > _equip.scss
+ *
+ * date: 2023.02.08
+ * author: danny
+ * description: 공용장비 페이지에서 사용되는 스타일이 정의된 파일입니다.
+ *
+ */
+
+/*------------------------------------*\
+  equip
+  equip 화면 레이아웃을 위한 컴퍼넌트
+\*------------------------------------*/
+
+.equip-list {
+  & > li {
+    list-style-type: none;
+
+    & > a  {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}
+
+.equip-img {
+  width: 100%;
+  aspect-ratio: 7/4;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $white;
+  border: $border-default;
+  border-radius: 10px;
+}
+
+.equip-body {
+  text-align: center;
+  margin: 10px 0;
+}
+.equip-name {
+  font-size: $font-size-lg;
+  margin: 0 0 3px;
+}
+
+.equip-name-eng {
+  color: $lighttext-color;
+  margin: 0; 
+}
+
+.equip-brand {
+  color: $primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  margin: 0 0 7px;
+}
+
+.modal-equip-name {
+  font-size: 1.4rem;
+  margin: 0 0 5px;
+  text-align: center;
+}
+
+.modal-equip-img {
+  width: 100%;
+  aspect-ratio: 7/4;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $white;
+  margin: 20px 0;
+}

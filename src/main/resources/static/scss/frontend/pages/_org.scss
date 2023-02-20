@@ -1,0 +1,521 @@
+/**
+ * page > _org.scss
+ *
+ * date: 2023.01.30
+ * author: minjeong
+ * description: 조직도 페이지에서 사용되는 스타일이 정의된 파일입니다.
+ *
+ */
+
+
+.icon-list {
+    font-size: 20px;
+}
+
+.org-tree-wrapper {
+    margin: 0 auto;
+
+    li {list-style: none;}
+}
+
+.org-tree {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-sm;
+    }
+
+    &::after {
+        content: "";
+        width: 1px;
+        height: 450px;
+        background-color: #dfdfdf;
+        position: absolute;
+        top: 0;
+        z-index: -2;
+    }
+}
+
+.org-li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+    .org-sub-box {
+        height: 50px;
+        padding: 0 1rem;
+        background-color: #dfdfdf;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        word-break: keep-all;
+        position: relative;
+        
+        .icon-list {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: rgba($black, .2);
+        }
+        @include media-breakpoint-up(lg) {
+            width: 230px;
+        }
+        &:not(.no-clickable) {
+            @include hover-focus {
+                cursor: pointer;
+                background-color: #d0d0d0;
+            }
+        }
+    }
+}
+
+.org-circle {
+    @include define-size(150px);
+    border-radius: 100%;
+    color: $white;
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    word-break: keep-all;
+    line-height: $line-height-sm;
+    position: relative;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-lg;
+    cursor: pointer;
+
+    &-primary::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        @include define-size(160px);
+        border-radius: 100%;
+        border: 2px solid $primary;
+        background-color: $white;
+        z-index: -1;
+    }
+
+    .sub-text {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-regular;
+        opacity: .75;
+    }
+
+    @include hover-focus {
+        background-color: darken($primary, 5%);
+    }
+
+}
+
+.org-box {
+    height: 50px;
+    width: 230px;
+    line-height: $line-height-sm;
+    background-color: $white;
+    border: 1px solid $gray-600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    word-break: keep-all;
+    position: relative;
+    cursor: default;
+
+    &.left {
+        @include media-breakpoint-down(md) {
+            margin-right: 20px;
+        }
+    }
+    &.right {
+        @include media-breakpoint-down(md) {
+            margin-left: 20px;
+        }
+    }
+    &.dummy {
+        border: 0;
+        height: 0;
+        padding: 0;
+    }
+
+    &:not(.dummy, .no-clickable) {
+        @include hover-focus {
+            cursor: pointer;
+            background-color: #f3f3f3;
+        }
+    }
+
+    .org-box-point {
+        @include define-size(9px);
+        border-radius: 100%;
+        border: 2px solid #d0d0d0;
+        background-color: $white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.end {right: -4.5px;}
+        &.start {left: -4.5px;}
+        &.top {top: -0px;}
+    }
+
+    .icon-list {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        color: rgba($black, .2);
+    }
+
+}
+
+.org-sub-box {
+    width: 100%;
+    height: 50px;
+    background-color: #dfdfdf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    word-break: keep-all;
+    cursor: pointer;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+        position: absolute;
+        right: 0;
+        top: 14.75%;
+        width: 230px;
+    }
+
+    @include hover-focus {
+        background-color: #d0d0d0;
+    }
+
+    .icon-list {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        color: rgba($black, .2);
+    }
+
+}
+
+.org-line-both {
+    &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $border-color;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+}
+
+
+.org-line-both-2 {
+    margin-top: 40px;
+    align-items: baseline;
+    width: 100%;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &::after {
+        content: "";
+        width: 81%;
+        height: 1px;
+        background-color: $border-color;
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+    .org-box {
+        width: 100%;
+        background-color: #dfdfdf;
+        border: none;
+        cursor: default;
+
+        &::after {
+            content: "";
+            width: 1px;
+            height: 100px;
+            background-color: $border-color;
+            position: absolute;
+            top: -18px;
+            z-index: -1;
+        }
+
+        &:not(.no-clickable) {
+            @include hover-focus {
+                cursor: pointer;
+                background-color: #d0d0d0;
+            }
+        }
+    }
+    .box-side {
+        width: 100%;
+        margin-bottom: 20px;
+
+        @include media-breakpoint-up(lg) {
+            &:not(:last-child) {
+                margin-right: 0.75rem;
+            }
+        }
+    }
+}
+
+.org-line-start {
+    &::after {
+        content: "";
+        width: 50%;
+        height: 1px;
+        background-color: $border-color;
+        position: absolute;
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-100%);
+    }
+}
+.org-line-end {
+    &::after {
+        content: "";
+        width: 50%;
+        height: 1px;
+        background-color: $border-color;
+        position: absolute;
+        left: 50%;
+        z-index: -1;
+    }
+}
+
+.org-desc {
+    margin-top: 15px;
+    width: 100%;
+    font-size: .925rem;
+    text-align: left;
+    border: 1px solid $border-color;
+    background-color: $white;
+}
+
+.org-badge-box {
+    position: relative;
+    padding: 1rem 1rem 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid $border-color;
+    background-color: #fafafa;
+    line-height: $line-height-md;
+
+    &::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background-color: $border-color;
+        position: absolute;
+        z-index: -1;
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .org-badge {
+        position: absolute;
+        top: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        padding: 4px 6px;
+        font-weight: 400;
+        line-height: 1;
+        background-color: #dfdfdf;
+        text-align: center;
+    }
+
+    .list-bullet {
+        li {
+            margin-top: 10px;
+        }
+    }
+
+    &:not(.no-clickable) {
+
+        @include hover-focus {
+            cursor: pointer;
+            background-color: #f5f5f5;
+            .org-badge {
+                background-color: #d0d0d0;
+            }
+        }
+    }
+
+    .icon-list {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        color: rgba($black, .2);
+    }
+}
+
+.org-desc-list {
+    padding: 0.5rem;
+    word-break: keep-all;
+
+    &>li{
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        background-color: #f3f3f3;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        &:not(.no-clickable) {
+            @include hover-focus {
+                cursor: pointer;
+                background-color: #e3e3e3;
+            }
+        }
+
+        .icon-list {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: rgba($black, .2);
+        }
+
+    }
+}
+
+.org-box-secondary {
+    background-color: #808080;
+    border: 0;
+    color: $white;
+    
+    @include hover-focus {
+        background-color: #7a7a7a!important;
+    }
+} 
+
+/* - 연락처 리스트와 관련된 스타일 - */
+.contact-list {
+    color: $subtext-color;
+
+    &:not(:last-child) {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px dashed $gray-300;
+    }
+
+        
+
+    .item {
+        margin-right: 21px;
+        position: relative;
+
+        &:not(:last-child)::after {
+            @include pseudo-element;
+            @include define-size(3px);
+            border-radius: 100%;
+            background-color: $subtext-color;
+            position: absolute;
+            top: 50%;
+            right: -11px;
+            margin-top: -1.5px;
+        }
+    }
+
+    .badge {
+        margin-bottom: 5px;
+    }
+}
+
+.contact-name {
+    font-size: 1.1rem;
+    color: rgba($text-color, .75);
+    font-weight: $font-weight-medium;
+}
+
+.contact-job {
+    color: $brown;
+    margin-right: .5rem;
+    font-size: 1.1rem;
+}
+
+.contact-desc {
+    margin-top: 5px;
+    font-size: .9rem;
+    line-height: $line-height-md;
+    color: #aaa;
+}
+
+#orgSubModal {
+    .contact-list {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        .item {
+            &::after {display: none;}
+        }
+    }
+
+    .contact-job {
+        margin-right: 0;
+        font-size: $font-size-sm;
+    }
+
+    .item {width: 300px;}
+    .contact-mail {width: 350px;}
+    .contact-tel {width: 200px;}
+
+    .lab-manager {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-top: 1rem;
+        border: none;
+    }
+}
+
+.team-desc {
+    color: $subtext-color;
+    padding: .125rem 2rem 1rem;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+}
+.manager-desc {
+    font-size: $font-size-sm;
+    padding-top: 10px;
+    line-height: $line-height-md;
+    color: rgba($subtext-color, .75);
+    border-top: 1px dashed $border-color;
+
+}

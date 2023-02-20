@@ -1,0 +1,491 @@
+// @ Reset
+//
+// 현재 프로젝트에 맞춤화된 default setting을 위해 bootstrap4 의 초기 설정 파일을 실작업 영역에 넣어두었습니다.
+// 유지보수시의 편의를 위하여 몇몇 부분의 경우 영어주석을 한글로 번역하여 놓았습니다.
+//
+// css 선언을 정렬할 때에는 유형별로 속성을 정렬하는 것을 기본으로 하지만 상황에 따라서 알파벳순 정렬을 따라도 무방합니다.
+//
+// HTML 엘리먼트의 초기설정입니다.
+// 기본적으로 HTML 엘리먼트에 부여되어 있는 스타일 속성을 제거합니다.
+
+// Document
+//
+// 모든 엘리먼트에 대해서 box-sizing: border-box 를 적용합니다.
+// 엘리먼트의 너비는 padding과 border를 포함합니다.
+*,
+*::before,
+*::after {
+  box-sizing: border-box; 
+}
+
+// 1. 일부 모바일에서의 텍스트 팽창을 방지합니다.
+//
+// 2. @viewport 설정시 스크롤바가 IE11과 Edge에서 겹치는 현상이 있으므로
+// auto hiding하지 않도록 스크롤 바를 적용합니다.
+//
+// 3. iOS와 안드로이드 웹킷 기반 브라우저(사파리, 크롬 등)에서 
+// 링크를 터치할 시 해당 위치를 표시하는 하이라이트의 색상을 설정합니다.
+// 일부 안드로이드에서는 하이라이트 색상을 표시하는 기능이 없으므로 alpha 값을 0으로 세팅합니다.
+html {
+  -webkit-text-size-adjust: 100%; //1
+  -ms-text-size-adjust: 100%; //1
+  -ms-overflow-style: scrollbar; //2
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //3
+}
+
+// IE10+ 는 경우에 따라 <meta name="viewport">를 무시하므로 스타일로 viewport 설정을 합니다.
+@-ms-viewport {
+  width: device-width;
+}
+
+// IE10 이전에서 새 HTML5 요소를 올바르게 표시합니다.
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+// Body
+
+body {
+  // 모든 브라우저에서 margin을 제거 합니다.
+  margin: 0; 
+  font-family: $font-family-base;
+  font-size: $font-size-base; 
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+  color: $body-color;
+  text-align: left; 
+  background-color: $white; 
+  overflow-x: hidden;
+
+}
+
+// 키보드로 접근할 수 없는 엘리먼트의 focus outline을 숨깁니다.
+// 이것은 포인터 이벤트에 응답하는 엘리먼트 주위의 의도하지 않은 focus outline을 방지합니다.
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+// Content grouping
+//
+// 1. Firefox 에서 적절한 box sizing 형식을 취합니다.
+// 2. Edge와 IE에서 overflow 되는 영역을 보이도록 합니다.
+
+hr {
+  box-sizing: content-box; // 1
+  height: 0; // 1
+  overflow: visible; // 2
+}
+
+// Selection
+//
+// drag시 select되는 영역의 색상을 정의합니다.
+
+::selection {
+  background: rgba($secondary, .3);
+}
+
+// Typography
+//
+
+// 기본적으로 <h1> - <h6>에 설정되어 있는 margin의 크기를 조정합니다.
+// margin-top을 0으로 함으로 폰트 크기에 따른 엘리먼트 사이즈 제어가 용이하도록 합니다.
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: $headings-margin-bottom;
+}
+
+// 문단의 margin을 재정의 합니다.
+p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+// Abbreviations
+//
+// 1. Remove the bottom border in Firefox 39-.
+// 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+// 3. Add explicit cursor to indicate changed behavior.
+// 4. Duplicate behavior to the data-* attribute for our tooltip plugin
+
+abbr[title],
+abbr[data-original-title] { // 4
+  text-decoration: underline; // 2
+  text-decoration: underline dotted; // 2
+  cursor: help; // 3
+  border-bottom: 0; // 1
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul,
+dl {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol li {
+  margin-bottom: .5rem;
+}
+
+ul li {
+  margin: 0;
+}
+
+dt {
+  font-weight: $dt-font-weight;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; // Undo browser default
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+dfn {
+  font-style: italic; // Add the correct font style in Android 4.3-
+}
+
+// stylelint-disable font-weight-notation
+b,
+strong {
+  font-weight: $font-weight-bold; // Add the correct font weight in Chrome, Edge, and Safari
+}
+// stylelint-enable font-weight-notation
+
+small {
+  font-size: 80%; // Add the correct font size in all browsers
+}
+
+//
+// Prevent `sub` and `sup` elements from affecting the line height in
+// all browsers.
+//
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub { bottom: -.25em; }
+sup { top: -.5em; }
+
+
+//
+// Links
+//
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  background-color: transparent; // IE10에서 회색 백그라운드 속성을 제거 
+  transition: $transition-fast; 
+  -webkit-text-decoration-skip: objects; // iOS8+와 Safari 8+에서 링크 하단의 간격을 제거
+
+  @include hover-focus {
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+// And undo these styles for placeholder links/named anchors (without href)
+// which have not been made explicitly keyboard-focusable (without tabindex).
+// It would be more straightforward to just use a[href] in previous block, but that
+// causes specificity issues in many other styles that are too complex to fix.
+// See https://github.com/twbs/bootstrap/issues/19402
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+
+  @include hover-focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+//
+// Code
+//
+
+// stylelint-disable font-family-no-duplicate-names
+pre,
+code,
+kbd,
+samp {
+  font-family: $font-family-base;
+}
+// stylelint-enable font-family-no-duplicate-names
+
+pre {
+  // Remove browser default top margin
+  margin-top: 0;
+  // Reset browser default of `1em` to use `rem`s
+  margin-bottom: 0;
+  // Don't allow content to break outside
+  overflow: auto;
+  // We have @viewport set which causes scrollbars to overlap content in IE11 and Edge, so
+  // we force a non-overlapping, non-auto-hiding scrollbar to counteract.
+  -ms-overflow-style: scrollbar;
+  white-space: break-spaces;
+  word-break: break-all;
+}
+
+
+//
+// Figures
+//
+
+figure {
+  // Apply a consistent margin strategy (matches our type styles).
+  margin: 0 0 1rem;
+}
+
+
+//
+// Images and content
+//
+
+img {
+  vertical-align: middle;
+  border-style: none; // Remove the border on images inside links in IE 10-.
+}
+
+svg:not(:root) {
+  overflow: hidden; // Hide the overflow in IE
+}
+
+
+//
+// Tables
+//
+
+table {
+  border-collapse: collapse; // Prevent double borders
+}
+
+caption {
+  padding-top: $table-cell-padding-y;
+  padding-bottom: $table-cell-padding-y;
+  color: $text-muted;
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  // Matches default `<td>` alignment by inheriting from the `<body>`, or the
+  // closest parent with a set `text-align`.
+  text-align: inherit;
+}
+
+
+//
+// Forms
+//
+
+label {
+  // Allow labels to use `margin` for spacing.
+  display: inline-block;
+}
+
+button {
+  border-radius: 0;
+  font-weight: 300;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+// Work around a Firefox/IE bug where the transparent `button` background
+// results in a loss of the default `button` focus styles.
+//
+// Credit: https://github.com/suitcss/base/
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0; // Remove the margin in Firefox and Safari
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+textarea {
+	color: $body-color;
+	&::placeholder  {
+		color: rgba($body-color, .5)!important;
+	}
+}
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  color: rgba($body-color, .5)!important;
+  display: block; /* For Firefox */
+}
+
+button,
+input {
+  overflow: visible; // Show the overflow in Edge
+}
+
+button,
+select {
+  text-transform: none; // Remove the inheritance of text transform in Firefox
+}
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//    controls in Android 4.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+button,
+html [type="button"], // 1
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; // 2
+}
+
+// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box; // 1. Add the correct box sizing in IE 10-
+  padding: 0; // 2. Remove the padding in IE 10-
+}
+
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  // Remove the default appearance of temporal inputs to avoid a Mobile Safari
+  // bug where setting a custom line-height prevents text from being vertically
+  // centered within the input.
+  // See https://bugs.webkit.org/show_bug.cgi?id=139848
+  // and https://github.com/twbs/bootstrap/issues/11266
+  -webkit-appearance: listbox;
+}
+
+textarea {
+  overflow: auto; // Remove the default vertical scrollbar in IE.
+  // Textareas should really only resize vertically so they don't break their (horizontal) containers.
+  resize: vertical;
+}
+
+fieldset {
+  // Browsers set a default `min-width: min-content;` on fieldsets,
+  // unlike e.g. `<div>`s, which have `min-width: 0;` by default.
+  // So we reset that to ensure fieldsets behave more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359
+  // and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+  min-width: 0;
+  // Reset the default outline behavior of fieldsets so they don't affect page layout.
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+// 1. Correct the text wrapping in Edge and IE.
+// 2. Correct the color inheritance from `fieldset` elements in IE.
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%; // 1
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit; // 2
+  white-space: normal; // 1
+}
+
+progress {
+  vertical-align: baseline; // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+}
+
+// Correct the cursor style of increment and decrement buttons in Chrome.
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  // This overrides the extra rounded corners on search inputs in iOS so that our
+  // `.form-control` class can properly style them. Note that this cannot simply
+  // be added to `.form-control` as it's not specific enough. For details, see
+  // https://github.com/twbs/bootstrap/issues/11586.
+  outline-offset: -2px; // 2. Correct the outline style in Safari.
+  -webkit-appearance: none;
+}
+
+//
+// Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+//
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+//
+// 1. Correct the inability to style clickable types in iOS and Safari.
+// 2. Change font properties to `inherit` in Safari.
+//
+
+::-webkit-file-upload-button {
+  font: inherit; // 2
+  -webkit-appearance: button; // 1
+}
+
+//
+// Correct element displays
+//
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item; // Add the correct display in all browsers
+  cursor: pointer;
+}
+
+template {
+  display: none; // Add the correct display in IE
+}
+
+// Always hide an element with the `hidden` HTML attribute (from PureCSS).
+// Needed for proper display in IE 10-.
+[hidden] {
+  display: none !important;
+}
+
+

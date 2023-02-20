@@ -1,0 +1,142 @@
+/**
+ * table.scss
+ *
+ * date: 2022.11.30
+ * author: danny
+ *
+ */
+
+ .table {
+	border: 0;
+
+	& > :not(:first-child) {
+		border-top: 0;
+	}
+
+	&.table-bordered {
+		th, td {
+			border: $border-default;
+		}
+
+		th {
+			color: $subtext-color;
+			font-weight: $font-weight-regular;
+		}
+	}
+}
+
+.table-content {
+	th {color: $subtext-color!important;}
+}
+
+.table-static {
+	th, td {
+		font-weight: $font-weight-regular;
+		font-size: $font-size-base;
+		border: 1px solid #dfdfdf;
+	}
+
+	th {
+		color: $text-color;
+		font-weight: $font-weight-medium;
+		line-height: $line-height-md;
+	}
+
+	th:first-child, td:first-child { border-left: 0; }
+	th:last-child, td:last-child { border-right: 0; }
+
+	thead {
+		th {
+			border-top: 1px dotted $gray-600;
+			background-color: $mist;
+		}
+	}
+}
+
+.table-title {
+	font-size: $font-size-sm;
+	color: $dark;
+}
+
+.table-layout-fixed {
+	table-layout: fixed;
+} 
+
+.table-footer-caption {
+	margin-top: 10px;
+}
+
+.table-th-end {
+	th {
+		text-align: right;
+	}
+}
+
+.table-th-colored {
+	th {
+		background-color: $mist;
+	}
+}
+
+.slope-wrap {
+	width: 100%;
+	min-height: 60px;
+	display: flex;
+	position: relative;
+}
+
+.slope-left {
+	position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.slope {
+	@include define-size(15px);
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+	&::after {
+		content:"";
+		position:absolute;
+		border-top:1px solid $subtext-color;
+		width:100%;
+		left:0;
+		transform: rotate(45deg);
+		transform-origin: 0% 0%;
+		top:0px;
+	}
+}
+
+.slope-right {
+	position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.textarea-table-responsive {
+    @include media-breakpoint-down(sm) {
+        display: block;
+        tbody {
+            display: block;
+            width: 100%;
+        }
+		tr { display: block;}
+        th,td {
+            display: block;
+            width: 100%;
+        }
+        th {
+            background-color: transparent;
+            border: none!important;
+            padding: 0;
+            font-size: $font-size-sm;
+        }
+        td {
+            border: 1px solid $border-color;
+            margin-bottom: 10px;
+        }
+    }
+}

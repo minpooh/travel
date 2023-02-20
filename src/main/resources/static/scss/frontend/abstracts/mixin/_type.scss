@@ -1,0 +1,52 @@
+/**
+ * mixin > _type.scss
+ *
+ * date: 2019.07.31
+ * author: danny
+ * update: 2019.07.31 danny - 파일 분리
+ * description: type에관련한 mixin이 정의된 파일입니다.
+ *
+ */
+
+/*------------------------------------*\
+  mixin for multiline ellipsis
+\*------------------------------------*/
+@mixin ellipsis ($max-height, $lines) {
+	overflow: hidden;
+	max-height: $max-height;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+	text-overflow: ellipsis;
+}
+
+// mixin for one line ellipsis 
+// 한 줄 짜리 ellipsis를 위한 mixin 입니다.
+@mixin line-ellipsis ($line-width) {
+	max-width: $line-width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/*------------------------------------*\
+  mixin for text color
+  텍스트 색상을 위한 mixin 입니다.
+\*------------------------------------*/
+@mixin text-color ($color) {
+	color: $color!important;
+}
+
+/*------------------------------------*\
+  mixin for font size
+  폰트 사이즈를 위한 mixin 입니다.
+\*------------------------------------*/
+@mixin font-size($size) {
+	font-size: $size!important;
+}
+
+
+// mixin for font line-height
+@mixin line-height($height) {
+	line-height: $height;
+}

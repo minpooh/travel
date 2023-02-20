@@ -1,0 +1,105 @@
+/**
+ * mixin > _buttons.scss
+ *
+ * date: 2019.07.31
+ * author: danny
+ * update: 2019.07.31 danny - 파일 분리
+ * description: button에관련한 mixin이 정의된 파일입니다.
+ *
+ */
+
+/*----------------------------------------*\
+  mixin for theme button
+  색상에 따른 button의 theme를 만드는 mixin
+  * map을 반복하여 사용합니다.
+\*----------------------------------------*/
+@mixin button-variant-theme($background, $border, $hover-background: $background, $hover-border: darken($border, 6%), $active-background: darken($background, 3%), $active-border: darken($border, 6%)) {
+	color: $white;
+	border-color: $border;
+	background-color: $background;
+  
+	&:not(:disabled):not(.disabled).hover,
+	&:not(:disabled):not(.disabled):hover {
+		color: $white;
+		background-color: darken($background, 3%);
+		border-color: darken($background, 6%);
+	}
+	
+	&:focus,
+	&.focus,
+	&.active,
+	&:active {
+		background-color: darken($background, 3%);
+		border-color: $hover-border;
+		box-shadow: $form-control-boxshadow-size rgba($background, .3);
+		
+		@include gradient-bg($active-background);
+	}
+
+	&:disabled {
+		background-color: $background;
+		border: 0;
+
+		@include hover-focus-active {
+			box-shadow: none;
+		}
+	}
+}
+
+/*------------------------------------------------*\
+  mixin for theme outline button
+  색상에 따라 outline button 스타일을 만드는 mixin
+  * map을 반복하여 사용합니다.
+\*------------------------------------------------*/
+@mixin button-outline-variant-theme($color) {
+	color: $color;
+	border-color: $color;
+	background-color: $white;
+
+	&.hover,
+	&:hover,
+	&.focus,
+	&:focus {
+		color: color-yiq($color);
+		border-color: $color;
+		background-color: $color;
+		box-shadow: $form-control-boxshadow-size rgba($color, .3);
+	}
+
+	&.active,
+	&:active {
+		color: color-yiq($color)!important;
+		background-color: darken($color, 5%)!important;
+		box-shadow: $form-control-boxshadow-size rgba($color, .3)!important;
+	}
+
+	&:disabled {
+		color: $color;
+
+		@include hover-focus-active {
+			box-shadow: none;
+			background-color: inherit;
+		}
+	}
+}
+
+/*---------------------------------------------------*\
+  mixin for underline button
+  색상에 따라 underline button 스타일을 만드는 mixin
+  * map을 반복하여 사용합니다.
+\*---------------------------------------------------*/
+@mixin button-underline-varaiant-theme($color, $color-hover: darken($color, 20%)) {
+	color: $color;
+	font-size: $btn-font-size-sm;
+	text-decoration: underline!important;
+	cursor: pointer;
+	@include hover-focus-active {
+		color: $color-hover;
+		text-decoration: underline!important;
+	}
+	.material-icons {
+		font-size: .85rem;
+		position: relative;
+		top: 2px;
+	}
+}

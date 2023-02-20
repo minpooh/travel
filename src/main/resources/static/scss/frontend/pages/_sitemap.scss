@@ -1,0 +1,106 @@
+/*
+ * page > _sitemap.scss
+ *
+ * date: 2023.01.25
+ * author: minjeong
+ * description: 사이트맵에서 사용되는 스타일이 정의된 파일입니다.
+ *
+ */
+
+
+.sitemap {
+    border-top: $primary 3px solid;
+    background-color: $bg-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    z-index: $zindex-sitemap;
+    display: none;
+    transition: all $header-transition-opacity-duration;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.open { display: block; }
+
+    .container { height: 100% }
+}
+
+.btn-sitemap-close {
+    @include define-size(27px);
+    background-image: url("/resources/asset/images/icon/icon_close.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1;
+    background-size: 24px;
+    background-color: $primary;
+    padding: 37px;
+}
+
+.sitemap-header {
+    height: $header-height - 6px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 35px;
+    align-items: center;
+}
+
+.sitemap-menu {
+    padding-top: 120px;
+
+    a {
+        @include hover-focus{
+            color: $primary;
+        };
+    }
+
+    li { list-style: none;}
+}
+
+.depth1 {
+    line-height: $line-height-lg;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-lg;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::after {
+        @include pseudo-element();
+        @include define-size(13px, 2px);
+        position: absolute;
+        left: 2px;
+        bottom: -7px;
+        background-color: $brown;
+    }
+}
+
+.depth2 {
+    padding-left: 1px;
+
+    & li {
+        margin-bottom: 15px;
+
+        a {
+            margin-bottom: 10px;
+            display: block;
+        }
+    }
+}
+
+.depth3 {
+    & li {
+        margin: 5px 0;
+
+        a {
+            font-size: $font-size-sm;
+            color: $neutral;
+
+            @include hover-focus{
+                color: $primary;
+            };
+        }
+    }
+}

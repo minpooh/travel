@@ -1,0 +1,21 @@
+/**
+ * mixin > _size.scss
+ *
+ * date: 2019.07.31
+ * author: danny
+ * update: 2019.07.31 danny - 파일 분리
+ * description: size에관련한 mixin이 정의된 파일입니다.
+ *
+ */
+
+/*--------------------------------------------------*\
+  mixin for size
+  'width'와 'height'를 동시에 정의하도록 돕는 mixin
+  @param {size} $width - 요소의 'width'
+  @param {size} $height [$width] - 요소의 'height'
+  {size} :: 숫자와 관련 css 단위를 적용합니다.
+\*--------------------------------------------------*/
+@mixin define-size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}

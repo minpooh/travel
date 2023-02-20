@@ -1,0 +1,122 @@
+// @ typography
+// font, text, paragraph과 관련된 스타일을 정의하고 있습니다.
+//
+
+/*------------------------------------*\
+  font include
+\*------------------------------------*/
+@include font-face($font-name, $font-family-path + $font-name + "-Light", 300);
+@include font-face($font-name, $font-family-path + $font-name + "-Regular", 400);
+@include font-face($font-name, $font-family-path + $font-name + "-SemiBold", 500);
+@include font-face($font-name, $font-family-path + $font-name + "-Bold",600);
+
+@include font-face($font-hero-name, $font-hero-path + $font-hero-name + "Gothic-Regular", 400);
+@include font-face($font-hero-name, $font-hero-path + $font-hero-name + "Gothic-Bold", 600);
+
+
+.font-hero {
+	font-family: $font-hero-name;
+}
+
+// text color를 정의하는 헬퍼 클래스
+@each $key, $value in $theme-colors {
+	.color-#{$key}{
+		@include text-color($value);
+	}
+}
+
+// font-size를 정의하는 헬퍼 클래스
+// $font-size map 내부의 값을 반환합니다.
+@each $key, $value in $font-size {
+	.font-#{$key} {
+		@include font-size($value);
+	}
+}
+
+// font-weight을 정의하는 헬퍼 클래스 
+@each $key, $value in $font-weight {
+	.font-#{$key}{
+		@include font-weight($value);
+	}
+}
+
+// line-height 정의하는 헬퍼 클래스
+@each $key, $value in $line-height {
+	.line-height-#{$key}{ 
+		line-height: $value!important;
+	}
+}
+
+// multiple ellipsis를 정의 하는 헬퍼 클래스
+// @param {number} $i - ellipsis가 될 줄의 수(integer) 
+@for $i from 1 through 8 {
+	.ellipsis-type#{$i} {
+		@include ellipsis(($i*1.8)+em, $i);
+	}
+}
+
+.font-title {
+	font-family: $font-hero-name;
+}
+
+.line-ellipsis {
+	@include line-ellipsis(100%);
+	text-overflow: ellipsis;
+	line-clamp: 1;
+	max-height: 1.8em;
+	display: block!important;
+}
+
+.refer {
+    color: $lighttext-color;
+	font-weight: $font-weight-regular;
+	line-height: $line-height-base;
+}
+
+.information {
+	color: $secondary;
+	font-size: .9rem;
+}
+
+.warning {
+	color: $danger;
+	font-size: .9rem;
+}
+
+.bullet {
+	padding-left: 12px;
+	position: relative;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-bold;
+	line-height: $line-height-md!important;
+
+	&::before {
+		@include pseudo-element();
+		@include define-size(5px);
+		position: absolute;
+		background-color: $primary;
+		display: inline-block;
+		border-radius: 2px;
+		left: 3px;
+		top: 14px;
+		margin-top: -4px;
+	}
+}
+
+.keep-all {
+	word-break: keep-all!important;
+}
+
+.break-all {
+	word-break: break-all!important;
+}
+
+.font-size-md-down {
+	@include media-breakpoint-down(md){
+		font-size: $font-size-sm;
+	}
+}
+
+.letter-spacing-1 {
+	letter-spacing: -.75px;
+}

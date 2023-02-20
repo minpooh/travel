@@ -1,0 +1,76 @@
+// @ description: setting sidebar
+
+
+.sidebar-menu-item {
+    display: block;
+    margin-bottom: 1.25rem;
+    position: relative;
+
+    & > a {
+        display: inline-block;
+        color: $lighttext-color;
+        font-size: $font-size-md;
+        line-height: $line-height-xs;
+        white-space: nowrap;
+        font-weight: $font-weight-regular;
+        letter-spacing: -1px;
+
+        &.active {
+            font-weight: $font-weight-bold;
+            color: $primary;
+        }
+        
+        @include hover-focus {
+            color: rgba($primary, .75);
+        }
+    }
+
+}
+
+.sidebar {
+    position: sticky;
+    top: 120px;
+
+    .sidebar-inner {
+        overflow-x: hidden;
+    }
+
+    &::before {
+        @include pseudo-element;
+        @include define-size(25px, 2px);
+        background-color: $secondary;
+        position: absolute;
+        top: -1rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+        overflow: auto; 
+        top: $header-height;
+        left: 0;
+        right: 0;
+        background-color: $white;
+        position: fixed;
+        z-index: 400;
+
+        .sidebar-title {
+            & > a {
+                margin: 0 0 .5rem;
+            }
+        }
+        .sidebar-menu {
+            white-space: nowrap;
+        }
+        .sidebar-menu-item {
+            margin-right: .25rem;
+
+            a {
+                font-size: $font-size-base;
+            }
+
+            &:first-child {
+                border-top: 2px solid $secondary;
+                padding-top: 20px;
+            }
+        }
+    }
+}

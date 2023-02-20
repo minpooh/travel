@@ -1,0 +1,17 @@
+/**
+ * mixin > _size.scss
+ *
+ * date: 2019.07.31
+ * author: danny
+ * update: 2019.07.31 danny - 파일 분리
+ * description: size에관련한 mixin이 정의된 파일입니다.
+ *
+ */
+
+/*--------------------------------------------------*\
+  mixin for svg image color
+  navbar의 hamburger 버튼의 색상을 변경하기 위한 mixin입니다.
+\*--------------------------------------------------*/
+@mixin toggler-color($color) {
+	background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+}
