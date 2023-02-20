@@ -1,7 +1,0 @@
-@each $color, $value in $theme-colors {
-	.badge-#{$color} {
-        font-size: $font-size-sm;
-        background-color: $value;
-        color: $white;
-	}
-}

@@ -1,11 +1,9 @@
 @charset 'utf-8';
 
 /*!
- * asnet stylesheet
- * Copyright (c) 2019 ASNET Co., LTD. | http://www.asnet.co.kr
- * Date: 2023-01-02
- * Author: jang deul 
- * Description: asnet의 scss 파일을 최종적으로 인클루드 하는 파일 입니다.
+ * Date: 2023-02-20
+ * Author: minjeong
+ * Description: scss 파일을 최종적으로 인클루드 하는 파일 입니다.
  */ 
  
 @import "vendors/bootstrap5.1.3"; 
@@ -24,53 +22,5 @@
 @import "base/reset";
 @import "base/type";
 
-@import "components/accordion";
-@import "components/badge";
-@import "components/banner";
-@import "components/breadcrumb";
-@import "components/buttons";
-@import "components/card";
-@import "components/dropdown";
-@import "components/diagram";
-@import "components/forms";
-@import "components/hero";
-@import "components/icon";
-@import "components/lists";
-@import "components/logo";
-@import "components/media";
-@import "components/modal";
-@import "components/pagination";
-@import "components/paragraph";
-@import "components/scrollbar";
-@import "components/select";
-@import "components/spinner";
-@import "components/sidebar";
-@import "components/switch";
-@import "components/tab";
-@import "components/table";
-@import "components/tag";
-@import "components/thumb";
-@import "components/tooltip";
-
-@import "layout/footer";
-@import "layout/grid"; 
-@import "layout/header"; 
-@import "layout/position"; 
-@import "layout/section"; 
-@import "layout/wrapper";
- 
-@import "pages/entrance";
-@import "pages/equip";
-@import "pages/greeting";
-@import "pages/login";
-@import "pages/main";
-@import "pages/map";
-@import "pages/mypage";
-@import "pages/org";
-@import "pages/schedule";
-@import "pages/search";
-@import "pages/term";
-@import "pages/view";
-@import "pages/sitemap";
 
 @import "shame";
