@@ -6,7 +6,27 @@
     background-attachment: fixed;
 }
 
-.section {
+.main-section {
     height: 100vh;
     background-color: $light;
+    padding-top: 200px;
+    padding-left: 10%;
+
+    .main-section-desc {
+        @include media-breakpoint-up(lg) {
+            padding-right: 20%;
+        }
+    }
+    .main-section-title {
+        height: 100%;
+        font-family: $font-logo-name;
+        font-weight: $font-weight-regular;
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+    .main-section-text {
+        font-size: $font-size-md;
+        line-height: $line-height-md;
+        color: $gray;
+    }
 }

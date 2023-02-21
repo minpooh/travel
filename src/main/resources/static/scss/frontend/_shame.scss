@@ -2,3 +2,79 @@
 // 당장 scss 문법을 적용하기 어려운 경우나, 테스트로 스타일을 작성해야 하는 경우 사용되는 파일입니다.
 // 테스트가 끝나 후에는 해당 css를 바로 삭제해 주시기 바랍니다.
 // 이 파일에 있는 scss는 해당 스타일의 용도에 따라서 정리되어진 후 옮겨져야 합니다.
+
+
+.colSwiper {
+    width: 100%;
+    height: 500px;
+
+    .swiper-slide {
+        width: 370px!important;
+        height: 100%;
+    }
+    
+    .swiper-slide-image {
+        width: 100%;
+        height: 270px;
+        background-color: #fff;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+
+        .date {
+            color: $white;
+            font-weight: $font-weight-light;
+            position: absolute;
+            bottom: 0.5rem;
+            right: 1rem;
+        }
+    }
+    
+    .swiper-slide-text {
+        margin-top: 30px;
+        .country {
+            display: block;
+            font-family: $font-logo-name;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .desc {
+            color: rgba($gray, .75);
+            width: 100%;
+            word-break: keep-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: $line-height-md;
+        }
+    }
+    
+    .swiper-button-prev, .swiper-button-next {
+        left: auto;
+        top: auto;
+        bottom: 0;
+        background-size: cover;
+        &::after {
+            display:none;
+        }
+    }
+    .swiper-button-prev {
+        right: 60px;
+        background-image: url("/asset/image/icon_arrow_left.png");
+        background-position-x: left;
+        
+    }
+    .swiper-button-next {
+        right: 20px;
+        background-image: url("/asset/image/icon_arrow_right.png");
+        background-position-x: right;
+        
+    }
+    .swiper-scrollbar {
+        height: 1px!important;
+        
+    }
+}
