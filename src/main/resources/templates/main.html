@@ -9,7 +9,7 @@
             <div class="main-image" style="background-image:url('/asset/image/wintertrain.jpg');">
                 <div class="main-content"></div>
             </div>
-            <div class="main-section">
+            <div class="main-section main-section-col">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="main-section-desc">
@@ -53,6 +53,25 @@
                     </div>
                 </div>
             </div>
+            <div class="main-section">
+                <div class="main-section-desc">
+                    <h3 class="main-section-title">FOOD STORY</h3>
+                    <div class="main-section-text">길거리 음식부터 미슐랭 스타쉐프까지 세계 각곳의 다양한 맛집들을 만나보세요.</div>
+                </div>
+                <div class="randomsize-slide">
+                    <div class="swiper randomsizeSwiper">
+                        <div class="swiper-wrapper">
+                            <th:block th:each="num : ${#numbers.sequence(1,10)}">
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-image">
+                                        <img src="/asset/image/wintertrain.jpg" class="h-100"/>
+                                    </div>
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <th:block th:include="/layout/footer"></th:block>
 
@@ -68,10 +87,9 @@
             });
         </script>
         <script>
-            const swiper = new Swiper('.colSwiper', {
+            var swiper = new Swiper('.colSwiper', {
                 loop: true,
-                slidesPerView: 3,
-                slidesPerGroup: 1,
+                slidesPerView: 'auto',
                 spaceBetween: 55,
                 scrollbar: {
                     el: ".swiper-scrollbar",
@@ -86,6 +104,17 @@
                     disableOnInteraction: false
                 },
                 speed: 600,
+            });
+
+            var swiper = new Swiper('.randomsizeSwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 'auto',
+                speed: 4000,
+                spaceBetween: 30,
             });
         </script>
     </body>
