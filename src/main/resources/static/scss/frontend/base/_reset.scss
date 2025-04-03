@@ -363,6 +363,7 @@ button,
 html [type="button"], // 1
 [type="reset"],
 [type="submit"] {
+  appearance: button;
   -webkit-appearance: button; // 2
 }
 
@@ -392,6 +393,7 @@ input[type="month"] {
   // See https://bugs.webkit.org/show_bug.cgi?id=139848
   // and https://github.com/twbs/bootstrap/issues/11266
   -webkit-appearance: listbox;
+  appearance: listbox;
 }
 
 textarea {
@@ -444,6 +446,7 @@ progress {
   // https://github.com/twbs/bootstrap/issues/11586.
   outline-offset: -2px; // 2. Correct the outline style in Safari.
   -webkit-appearance: none;
+  appearance: none;
 }
 
 //

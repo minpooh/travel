@@ -20,7 +20,7 @@ $yellow: #dbae3b;
 $lightgreen: #b0b87b;
 $green: #262f1e;
 $red: #a64f44;
-$gray: #565857;
+$gray: #e4e2df;
 
 $gray-100:     #f7f5f5;
 $cyan:         #2c9ca8;
@@ -29,8 +29,8 @@ $bone:         #e4e2df;
 $grey:         #aaa5a4; 
 $mist:         #f7f7f7;  
 
-$primary:           $yellow;
-$secondary:         $lightgreen;
+$primary:           $green;
+$secondary:         $gray;
 $success:           $green;
 $info:              $blue;
 $danger:            $red;
@@ -292,7 +292,7 @@ $accordion-button-bg:                     transparent;
 $accordion-button-active-bg:              transparent;
 $accordion-button-active-color:           $body-color;
 
-$accordion-icon-active-color:             #971a43;
+$accordion-icon-active-color:             $primary !important;
 $accordion-icon-transition:               transform .2s ease-in-out;
 $accordion-icon-transform:                rotate(-180deg);
 
@@ -319,3 +319,4 @@ $table-group-separator-color: $gray-300;
 
 // - hero
 $hero-height: 200px;
+

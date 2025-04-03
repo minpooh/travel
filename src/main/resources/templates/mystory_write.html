@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="board-wrap">
+            <div class="board-top">
+                <div class="title">
+                    MY STORY
+                </div>
+            </div>
+            <div class="board-container">
+                <form>
+                    <div class="board-form">
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <label>이메일</label>
+                                <input type="email" class="form-control"/>
+                            </div>
+                            <div class="col-6">
+                                <label>비밀번호</label>
+                                <input type="password" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>제목</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="board-editor" id="editor"></div>
+                    <div class="board-btn-box justify-content-center">
+                        <button type="submit" class="btn-edit">작성</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script>
+            $('.header').addClass('white-header');
+
+            const toolbarOptions = [
+                [{ 'font': [] }],
+                ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+                ['blockquote', 'code-block'],
+                ['link', 'image', 'video', 'formula'],
+
+                [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
+                [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+                [{ 'direction': 'rtl' }],                         // text direction
+
+                [{ 'size': ['small', false, 'large', 'huge'] }],
+
+                [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+                
+                [{ 'align': [] }],
+
+                ['clean']                                         // remove formatting button
+            ];
+
+            const quill = new Quill('#editor', {
+                modules: {
+                    toolbar: toolbarOptions
+                },
+                height: 500,
+                theme: 'snow'
+            });
+        </script>
+    </body>
+</html>

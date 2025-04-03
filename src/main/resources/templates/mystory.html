@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="board-wrap">
+            <div class="board-top">
+                <div class="text">당신의 이야기를 들려주세요.</div>
+                <div class="box">
+                    <div class="count-text">
+                        총 <span class="count">10</span>개의 게시물이 있습니다.
+                    </div>
+                    <form>
+                        <div class="box-search">
+                            <input type="text" name="" placeholder="검색어를 입력해주세요."/>
+                            <button class="btn-search">
+                                <img src="/asset/image/btn_search.svg"/>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="board-container">
+                <div class="board-list">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">날짜</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">작성자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <th:block th:each="num : ${#numbers.sequence(1,10)}">
+                                <tr>
+                                    <th scope="row">2025.01.01</th>
+                                    <td>
+                                        <a href="/mystory/view" title="제목">오늘도 힘차게 살아가봅시다.!</a>
+                                    </td>
+                                    <td>Minjoung1510@gmail.com</td>
+                                </tr>
+                            </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="board-btn-box">
+                    <a href="/mystory/write" class="btn-edit" title="글쓰기">글쓰기</a>
+                </div>
+                <div class="board-pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a href="#" class="page-link">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">1</span>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script>
+            $('.header').addClass('white-header');
+        </script>
+    </body>
+</html>

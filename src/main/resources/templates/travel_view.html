@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="travel-wrap">
+            <div class="travel-slide-container">
+                <ul class="travel-slide">
+                    <li style="background-image: url('/asset/image/singapore1.jpg')"></li>
+                    <li style="background-image: url('/asset/image/singapore2.jpg')"></li>
+                    <li style="background-image: url('/asset/image/singapore3.jpg')"></li>
+                    <li style="background-image: url('/asset/image/singapore4.jpg')"></li>
+                    <li style="background-image: url('/asset/image/singapore5.jpg')"></li>
+                </ul>
+                <div class="travel-slide-text">
+                    <div class="travel-slide-desc">
+                        Island Country and City-state
+                    </div>
+                    <div class="travel-slide-title">
+                        SINGAPORE
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <div class="travel-flag">
+                    <img src="/asset/image/flag_singapore.png"/>
+                </div>
+                <div class="travel-country mb-2">싱가포르</div>
+                <div class="travel-about mb-4">
+                    금융과 무역을 중심으로 다양한 문화와 민족이 어울려 살고있는 매력적인 나라<br/>
+                    동남아시아, 말레이 반도의 남쪽에 위치한 섬나라이자 항구 도시로 이루어진 도시 국가 싱가포르<br/>
+                    다양한 여행정보들과 3박 5일 알차게 다녀온 일정을 한눈에 볼 수 있습니다.
+                </div>
+                <div class="travel-info mb-4">
+                    <div class="row justify-content-start">
+                        <div class="col">
+                            <div class="info-title">LANGUAGE</div>
+                            <div class="info-text">영어 외 3개언어</div>
+                        </div>
+                        <div class="col">
+                            <div class="info-title">MONEY</div>
+                            <div class="info-text">싱가포르 달러</div>
+                        </div>
+                        <div class="col">
+                            <div class="info-title">AIRPLANE</div>
+                            <div class="info-text">직항 5시간 50분</div>
+                        </div>
+                        <div class="col">
+                            <div class="info-title">VISA</div>
+                            <div class="info-text">무비자</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="travel-schedule">
+                    <div class="info-title">여행일정</div>
+                    <div class="accordion accordion-flush" id="travel-schedule-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingOne">
+                                <div>
+                                    <span>1일차</span>
+                                    <span class="date">2023-02-10 금요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseOne" aria-expanded="true" aria-controls="travel-schedule-collapseOne"></button>
+                            </div>
+                            <div id="travel-schedule-collapseOne" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingOne" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                    <div class="schedule-airplane">
+                                        <div class="airplane-info depart">
+                                            <strong class="airplane-time">19:35</strong>
+                                            <p class="airplne-date">
+                                                2023.02.10(금요일)</br>
+                                                인천(ICN)출발
+                                            </p>
+                                        </div>
+                                        <div class="airplane-flighttime">
+                                            <strong class="airline">TW171</strong>
+                                            <p class="flighttime">05시간30분</p>
+                                        </div>
+                                        <div class="airplane-info arrive">
+                                            <strong class="airplane-time">01:05</strong>
+                                            <p class="airplne-date">
+                                                2023.02.11(토요일)</br>
+                                                싱가포르(SIN)도착
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan plan-start">
+                                        <div class="title">[19:35] 인천국제공항 출발</div>
+                                    </div>
+                                    <div class="schedule-plan">
+                                        <div class="title">[01:05] 싱가포르 창이공항 도착</div>
+                                        <div class="desc">
+                                            싱가포르 창이공항 도착 약 5시간<br/>
+                                            택시타고 숙소로 이동<br/>
+                                            (우버택시 어플 미리 설치하기)
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan plan-end">
+                                        <div class="title">호텔 체크인 투숙 및 휴식</div>
+                                    </div>
+                                    <div class="schedule-info hotel">
+                                        <strong>프래그런스 호텔 - 에메랄드</strong>
+                                    </div>
+                                    <div class="schedule-info meal">
+                                        <strong>
+                                            [조식] 없음
+                                        </strong>
+                                        <strong>
+                                            [중식] 없음
+                                        </strong>
+                                        <strong>
+                                            [석식] 기내식
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingTwo">
+                                <div>
+                                    <span>2일차</span>
+                                    <span class="date">2023-02-11 토요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseTwo" aria-expanded="true" aria-controls="travel-schedule-collapseTwo"></button>
+                            </div>
+                            <div id="travel-schedule-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingTwo" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                    <div class="schedule-plan plan-start">
+                                        <div class="title">야쿤카야 토스트</div>
+                                        <div class="desc">
+                                            아침겸 점심식사
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan location">
+                                        <div class="title">센토사섬</div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">싱가포르 유니버셜 스튜디오</div>
+                                            <div class="desc">전 세계 5개의 유니버설 스튜디오 테마파크중 하나, 동남아시아 최초의 할리우드 영화 테마파크</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">팔라완비치</div>
+                                            <div class="desc">센토사 섬 내 조성된 인공 해변으로, 물이 맑고 깨끗하다.</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                            <div class="desc">
+                                                아름다운 석양을 볼 수 있는 일몰 명소로 유명하며, 그물 다리를 건너 맞은 편 섬으로 이동하면 아시아 최남단에 자리한 전망 시설도 이용할 수 있다.<br/>
+                                                해가 진 후에는 인근에서 펼쳐지는 레이저 쇼 '윙스 오브 타임'을 실감나게 관람할 수 있어 많은 관광객들이 찾는다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">실로소비치</div>
+                                            <div class="desc">센토사에서 아름다운 해변으로 손꼽히는 곳.</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                            <div class="desc">
+                                                실로소 비치를 찾는 사람들이 가장 먼저 보게 되는 것은 비치 입구의 'Siloso' 알파벳 조형물이다.<br/>
+                                                각기 다른 크기와 방향으로 재미있게 구성된 조형물은 해마다 다른 색으로 변경되며, 실로소 비치를 찾는 사람들에게 포토 스폿으로 각광받고 있다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan plan-end">
+                                        <div class="title">호텔 투숙 및 휴식</div>
+                                    </div>
+                                    <div class="schedule-info hotel">
+                                        <strong>프래그런스 호텔 - 에메랄드</strong>
+                                    </div>
+                                    <div class="schedule-info meal">
+                                        <strong>
+                                            [조식] 야쿤카야토스트
+                                        </strong>
+                                        <strong>
+                                            [중식] 유니버셜스튜디오 내 간식
+                                        </strong>
+                                        <strong>
+                                            [석식] 트라피자
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingThree">
+                                <div>
+                                    <span>3일차</span>
+                                    <span class="date">2023-02-12 일요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseThree" aria-expanded="true" aria-controls="travel-schedule-collapseThree"></button>
+                            </div>
+                            <div id="travel-schedule-collapseThree" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingThree" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                    <div class="schedule-plan plan-start">
+                                        <div class="title">호텔 체크아웃</div>
+                                        <div class="desc">
+                                            마리나베이샌즈 호텔로 숙소 이동
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">술탄모스크</div>
+                                            <div class="desc">싱가포르 이슬람 사원 중 가장 화려한 종교 건축물</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                            <div class="desc">술탄모스크가 있는 아랍스트리트는 이슬람의 문화와 흔적을 찾을 수 있는 거리로, 알록달록한 벽화와 건물들이 사진 찍기에도 좋다.</div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">하지레인</div>
+                                            <div class="desc">그래피티와 건축물 등 볼거리가 넘치는 예술가들의 거리</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan">
+                                        <div class="title">무스타파 센터</div>
+                                        <div class="desc">
+                                            싱가폴 기념품을 가장 저렴하게 구매할 수 있는 곳으로 유명한 쇼핑몰
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan plan-end">
+                                        <div class="title">호텔 체크인 투숙 및 휴식</div>
+                                    </div>
+                                    <div class="schedule-info hotel">
+                                        <strong>마리나베이샌즈 호텔</strong>
+                                    </div>
+                                    <div class="schedule-info meal">
+                                        <strong>
+                                            [조식] 없음
+                                        </strong>
+                                        <strong>
+                                            [중식] 블랑코 새우국수
+                                        </strong>
+                                        <strong>
+                                            [석식] 팀호완
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingFour">
+                                <div>
+                                    <span>4일차</span>
+                                    <span class="date">2023-02-13 월요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseFour" aria-expanded="true" aria-controls="travel-schedule-collapseFour"></button>
+                            </div>
+                            <div id="travel-schedule-collapseFour" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingFour" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                    <div class="schedule-plan plan-start">
+                                        <div class="title">호텔 조식</div>
+                                        <div class="desc">
+                                            마리나베이샌즈 호텔 내 레스토랑
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">머라이언공원</div>
+                                            <div class="desc"></div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan">
+                                        <div class="title">포토존 시내 관광 (래플스호텔,올드힐스트릿경찰서)</div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">래플스호텔</div>
+                                            <div class="desc"></div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">올드힐스트릿경찰서</div>
+                                            <div class="desc">숨겨진 포토스팟으로 아는 사람만 아는 알록달록 경찰서</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">TWG Tea Garden</div>
+                                            <div class="desc">싱가포르의 대표 럭셔리 티브랜드 TWG</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                            <div class="desc">
+                                                싱가포르 여행 필수 코스인 마리나베이 샌즈안에 위치해 쇼핑하고 티타임을 가지기에 좋은 곳이자<br/>
+                                                세계 각국에서 수집된 다양한 차를 종류별로 즐길 수 있는 럭셔리 카페로 잘 알려져있다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan box">
+                                        <div class="plan-box">
+                                            <div class="title">가든스 바이 더 베이</div>
+                                            <div class="desc">마리나 베이의 물가에 있는 세계에서 가장 큰 기둥 없는 온실</div>
+                                            <div class="img-container">
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                                <div class="img" style="background-color: #ddd;"></div>
+                                            </div>
+                                            <div class="desc">
+                                                마리나 베이의 물가에 있는 101헥타르의 이곳은 플라워 돔과 클라우드 포레스트 냉각 온실로 세계에서 가장 큰 기둥 없는 온실이다.<br/>
+                                                160가지의 종과 32,000개가 넘는 식물들이 있으며 실내에서 가장 큰 폭포와 35m 높이의 클라우드 마운틴이 있다.<br/>
+                                                두 개의 슈퍼트리 사이에 설치된 128m 길이의 OCBC 스카이웨이가 있다. 해가 질 때쯤 가든 랩소디를 즐겨보자.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan">
+                                        <div class="title">라우 파 삿</div>
+                                        <div class="desc">
+                                            19세기에 건설된 오랫동안 현지 풍경에서 인상적인 존재<br/>
+                                            호커센터, 사태거리에서 저녁식사
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan plan-end">
+                                        <div class="title">[19:35] 싱가포르공항 출발</div>
+                                    </div>
+                                    <div class="schedule-info meal">
+                                        <strong>
+                                            [조식] 호텔부페
+                                        </strong>
+                                        <strong>
+                                            [중식] 송파바쿠테
+                                        </strong>
+                                        <strong>
+                                            [석식] 사테거리 NO.7
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingFive">
+                                <div>
+                                    <span>5일차</span>
+                                    <span class="date">2023-02-14 화요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseFive" aria-expanded="true" aria-controls="travel-schedule-collapseFive"></button>
+                            </div>
+                            <div id="travel-schedule-collapseFive" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingFive" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                    <div class="schedule-airplane">
+                                        <div class="airplane-info depart">
+                                            <strong class="airplane-time">03:55</strong>
+                                            <p class="airplne-date">
+                                                2023.02.14(화요일)</br>
+                                                싱가포르(SIN)출발
+                                            </p>
+                                        </div>
+                                        <div class="airplane-flighttime">
+                                            <strong class="airline">TW171</strong>
+                                            <p class="flighttime">05시간35분</p>
+                                        </div>
+                                        <div class="airplane-info arrive">
+                                            <strong class="airplane-time">09:30</strong>
+                                            <p class="airplne-date">
+                                                2023.02.14(화요일)</br>
+                                                인천(ICN)도착
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan">
+                                        <div class="title">[09:30] 인천국제공항 도착</div>
+                                    </div>
+                                    <div class="schedule-plan plan-end">
+                                        <div class="title">공항식당에서 식사</div>
+                                    </div>
+                                    <div class="schedule-info meal">
+                                        <strong>
+                                            [조식] 기내식
+                                        </strong>
+                                        <strong>
+                                            [중식] 공항식당
+                                        </strong>
+                                        <strong>
+                                            [석식] 없음
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-button">
+                    <a href="#" class="btn btn-outline-dark" title="목록">목록</a>
+                </div>
+            </div>
+        </div>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        
+        <script>
+            $('.header').addClass('white-header');
+        </script>
+        <script> 
+            window.addEventListener("DOMContentLoaded", function () {
+                let slides = document.querySelectorAll(".travel-slide > li");
+                let totalSlides = slides.length;
+                let currentIndex = 0;
+
+                function showNextSlide() {
+                    let prevIndex = currentIndex;
+                    currentIndex = (currentIndex + 1) % totalSlides;
+
+                    slides[prevIndex].classList.remove("active");
+                    slides[prevIndex].style.zIndex = "1";
+
+                    slides[currentIndex].classList.add("active");
+                    slides[currentIndex].style.zIndex = "10";
+
+                    setTimeout(showNextSlide, 3000);
+                }
+
+                slides[currentIndex].classList.add("active");
+                slides[currentIndex].style.zIndex = "10";
+
+                setTimeout(showNextSlide, 3000);
+            });
+
+
+        </script>
+    </body>
+</html>

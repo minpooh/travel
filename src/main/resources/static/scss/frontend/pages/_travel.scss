@@ -1,0 +1,374 @@
+.travel-wrap {
+    margin-top: 90px;
+}
+.travel-content {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .name-box {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        background-color: $primary;
+        color: $light;
+        font-family: $font-logo-name;
+        font-size: 24px;
+        letter-spacing: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 50;
+        color: #fff;
+        text-align: center;
+        font-weight: $font-weight-light;
+    }
+    .desc {
+        font-size: 1.5rem;
+        padding-bottom: 3.25rem;
+        letter-spacing: 0.25rem;
+    }
+    
+    .title {
+        font-size: 7rem;
+        font-family: $font-logo-name;
+        height: 7rem;
+    }
+}
+.background-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.btn-hover-border {
+    width: 213px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid rgba(255,255,255,0.35);
+    transition: all 0.5s linear;
+    a {
+        color: $light;
+    }
+    &:hover {
+        border: 1px solid rgba(255,255,255,1);
+    }
+}
+.travel-slide {
+    position: relative;
+    list-style-type: none;
+    height: calc(100vh - 90px);
+    padding: 0;
+}
+.travel-slide > li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.travel-slide > li.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.travel-slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 50;
+    color: #fff;
+    text-align: center;
+    font-weight: $font-weight-light;
+}
+
+.travel-slide-desc {
+    font-size: 1.5rem;
+    padding-bottom: 3.25rem;
+    letter-spacing: 0.25rem;
+}
+
+.travel-slide-title {
+    font-size: 7rem;
+    font-family: $font-logo-name;
+}
+
+.travel-flag {
+    width: 150px;
+    border: 1px solid rgba(0,0,0,0.125);
+    margin-top: 100px;
+    margin-bottom: 43px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.travel-country {
+    font-size: $font-size-xl;
+    font-weight: 500;
+}
+
+.travel-about {
+    font-size: $font-size-lg;
+    line-height: 1.75rem;
+}
+
+.travel-info {
+    font-size: $font-size-md;
+}
+
+.info-title {
+    font-weight: 500;
+    letter-spacing: 0.125rem;
+}
+.info-text {
+    font-weight: $font-weight-regular;
+}
+
+.travel-schedule {
+    margin-top: 20px;
+    
+    .info-title {
+        font-size: $font-size-lg;
+    }
+
+    .accordion {
+        margin-top: 20px;
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            height: 70px;
+            background-color: #f7f7f7;
+            padding-left: 50px;
+            padding-right: 50px;
+            justify-content: space-between;
+            border-top: 1px solid #1c1c1c;
+            border-bottom: 1px solid #e5e5e5;
+            .date {
+                padding-left: 30px;
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .accordion-button {
+                width: 1.25rem;
+
+                &:focus {
+                    box-shadow: 0 0 0 0;
+                }
+                &:not(.collapsed) {
+                    box-shadow: 0 0 0 0;
+                }
+            }
+        }
+        .accordion-body {
+            padding: 0 50px 50px 50px;
+        }
+    }
+
+    .schedule-airplane {
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 50px;
+
+        .airplane-info {
+            position: relative;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background: $primary;
+                bottom: 0.5px;
+                border-radius: 100%;
+                z-index: 2;
+            }
+            &.depart {
+                padding-right: 20px;
+                text-align: end;
+            }
+            &.depart::before {
+                right: -4px;
+            }
+            &.arrive {
+                padding-left: 20px;
+            }
+            &.arrive::before {
+                left: -4px;
+            }
+            .airplane-time {
+                font-family: 'TourEasy';
+                font-size: 20px;
+            }
+            .airplane-date {
+                font-size: 14px;
+            }
+        }
+        .airplane-flighttime {
+            text-align: center;
+            position: relative;
+            width: 300px;
+            .airline {
+                font-weight: 500;
+            }
+            .airline::before {
+                content: '';
+                display: block;
+                margin: 0 auto 4px;
+                width: 36px;
+                height: 25px;
+                background: url(/asset/image/icon_airplane_line.svg) 50% 50% / 100% no-repeat;
+            }
+            .flighttime {
+                color: $grey;
+            }
+        }
+        .airplane-flighttime::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #1c1c1c;
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+            z-index: 1;
+        }
+    }
+
+    .schedule-plan {
+        position: relative;
+        padding-top: 50px;
+        padding-left: 50px;
+        .title {
+            font-weight: 500;
+        }
+        .desc {
+            padding-top: 5px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .plan-box {
+            padding: 30px;
+            border: 1px solid #e5e5e5;
+            position: relative;
+            .img-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                padding: 15px 0;
+                .img {
+                    width: 200px;
+                    height: 150px;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                }
+            }
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: $primary;
+            left: -3.5px;
+            top: 58px;
+            border-radius: 100%;
+            z-index: 2;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            background: #e5e5e5;
+            z-index: 1;
+        }
+        &.box::before {
+            top: 90px;
+        }
+    }
+    .plan-end {
+        margin-bottom: 50px;
+    }
+    .plan-start::after {
+        top: 58px;
+    }
+    .plan-end::after {
+        height: 58px;
+    }
+    .location::before {
+        left: -14px;
+        top: 61%;
+        width: 29px;
+        height: 33px;
+        background: url(/asset/image/icon_location.svg) 50% 50% / 100% no-repeat;
+    }
+
+    .schedule-info {
+        padding: 50px;
+        border-top: 1px solid #e5e5e5;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+        strong {
+            padding-left: 100px;
+            font-weight: 400;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px; 
+        }
+        &.hotel {
+            &::before {
+                width: 28px;
+                background: url(/asset/image/icon_detail_point_hotel.svg) 50% 50% / 100% no-repeat;
+            }
+        }
+        &.meal {
+            &::before {
+                background: url(/asset/image/icon_detail_point_meal.svg) 50% 50% / 100% no-repeat;
+            }
+        }
+    }
+}
+
+.list-button {
+    text-align: center;
+    margin: 100px 0;
+    .btn {
+        border-radius: 0;
+        width: 213px;
+        font-size: 18px;
+    }
+}

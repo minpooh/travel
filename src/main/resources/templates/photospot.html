@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="spot-wrap">
+            <div class="main-image">
+                <p class="text">SPECIAL PHOTOSPOT</p>
+                <p class="arrow">
+                    <span class="material-icons">south</span>
+                </p>
+            </div>
+            <div class="container">
+                <div class="top-cate">
+                    <ul>
+                        <li class="category active">전체</li>
+                        <li class="category">국내</li>
+                        <li class="category">국외</li>
+                    </ul>
+                </div>
+                <div class="photo-list">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/desert.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location1">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/obsevatoryhill.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location2">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/beach.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location3">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/kyoto.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location4">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/osaka.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location5">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/gunsan.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location6">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/policeoffice.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location7">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/gangneung.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location8">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/infinitypool.jpeg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location9">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/desert.jpeg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location10">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/bluemountain.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location11">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="photo" style="background-image: url('/asset/image/kyotoriver.jpg');">
+                                <div class="hover-box">
+                                    <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location12">위치보기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <th:block th:include="/modal_location"></th:block>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script>
+            //header
+            $('.header').addClass('text-white-header');
+            $(window).scroll(function(){
+                var scroll = $(window).scrollTop();
+                if(scroll > 80) {
+                    $('.header').removeClass('text-white-header');
+                    $('.header').addClass('white-header');
+                }else{
+                    $('.header').removeClass('white-header');
+                    $('.header').addClass('text-white-header');
+                }
+            });
+
+            //modal
+            for (let i = 1; i <= 12; i++) {
+                let location = document.getElementById(`location${i}`);
+                location.addEventListener('shown.bs.modal', function () {});
+            }
+
+
+            //modal location copy
+            function copy() {
+                var text = document.getElementById("spot1location");
+
+                navigator.clipboard.writeText(text.innerText) // 또는 text.textContent 사용 가능
+                alert("복사되었습니다.");
+            }
+        </script>
+    </body>
+</html>

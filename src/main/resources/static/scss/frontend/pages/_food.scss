@@ -1,0 +1,116 @@
+.food-wrap {
+    margin-top: 90px;
+    margin-bottom: 150px;
+}
+.food-top {
+    padding-top: 50px;
+}
+.food-image {
+    width: 300px;
+    height: 410px;
+    border-radius: 145px 145px 0 0;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+.food-info {
+    padding-left: 50px;
+    list-style-type: none;
+    .name {
+        font-size: 40px;
+        padding: 30px 0;
+        .name-badge {
+            font-size: 16px;
+            font-weight: 300;
+            color: #aaa;
+        }
+    }
+    .info {
+        position: relative;
+        p {
+            padding-left: 25px;
+            font-weight: 300;
+        }
+    }
+    .info::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 18px;
+        height: 23.5px;
+        color: #ddd;
+        fill: #ddd;
+    }
+    .location::before {
+        background: url(/asset/image/icon_info_location.svg) 50% 50% / 100% no-repeat;
+    }
+    .time::before {
+        background: url(/asset/image/icon_info_time.svg) 50% 50% / 100% no-repeat;
+    }
+    .number::before {
+        background: url(/asset/image/icon_info_number.svg) 50% 50% / 100% no-repeat;
+    }
+    .store::before {
+        background: url(/asset/image/icon_info_store.svg) 50% 50% / 100% no-repeat;
+    }
+}
+.food-middle {
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid #e3e2e1;
+    text-align: center;
+    font-size: $font-size-lg;
+    .title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .menu {
+        justify-content: center;
+        margin: 0 100px;
+        font-size: 16px;
+        .tried {
+            border-left: 0.5px dashed $body-color;
+        }
+        .category {
+            padding: 20px 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+            border-top: 0.5px solid $body-color;
+            border-bottom: 0.5px solid $body-color;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style-type: none;
+            gap: 20px;
+        }
+        .img {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+        .text {
+            font-weight: 300;
+        }
+    }
+}
+#map {
+    width: 80%;
+    height: 40vw;
+    background-color: #ddd;
+    margin: 0 auto;
+}
+
+

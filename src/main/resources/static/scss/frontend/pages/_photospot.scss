@@ -1,0 +1,119 @@
+@keyframes downBlink {
+    from { 
+        bottom: 20px;
+        opacity: 1.0;
+    }
+    to { 
+        bottom: 40px;
+        opacity: 0.0;
+    }
+}
+.spot-wrap {
+    margin-bottom: 100px;
+    .main-image {
+        background-image: url("/asset/image/kyotoriver.jpg");
+        background-attachment: local;
+        position: relative;
+        .text {
+            width: 100%;
+            font-family: $font-logo-name;
+            font-size: 5rem;
+            line-height: 6rem;
+            text-align: center;
+            color: $light;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .arrow {
+        margin: 0;
+        position: absolute;
+        bottom: 20px;
+        left:50%;
+        transform: translateX(-50%);
+        animation: downBlink 1s infinite;
+        .material-icons {
+            font-size: 35px;
+            font-weight: 300;
+            color: $light;
+        }
+    }
+    .top-cate {
+        margin-top: 40px;
+        ul {
+            display: flex;
+            gap: 30px;
+            border-bottom: 1px solid $grey;
+        }
+        .category {
+            font-size: 18px;
+            list-style-type: none;
+            padding: 20px 0;
+        }
+        .active {
+            border-bottom: 1px solid $body-color;
+        }
+    }
+    .photo-list {
+        margin-top: 30px;
+        .row {
+           row-gap: 26px;
+        }
+    }
+    .photo {
+        height: 338px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #ddd;
+        position: relative;
+        .hover-box {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .btn-location {
+            padding: 5px 10px;
+            border: 1px solid $light;
+            color: $light;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .photo:hover {
+        .hover-box {
+            display: block;
+        }
+    }
+}
+
+.location-modal {
+    .modal-title {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        .material-icons {
+            color: $red;
+            padding-right: 2px;
+        }
+    }
+    .modal-body {
+        p {
+            margin: 0;
+        }
+    }
+    .modal-footer {
+        .material-icons {
+            color: $grey;
+        }
+    }
+}
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="board-wrap">
+            <div class="board-top">
+                <div class="text pb-0">
+                    오늘도 힘차게 살아가봅시다.!
+                </div>
+                <div class="info">
+                    <span>minjoung1510@gmail.com</span> | <span>2025.01.01</span> | <span>30</span>
+                </div>
+            </div>
+            <div class="board-container">
+                <div class="board-view">
+                    오늘도 힘차게 살아가봅시다.! 여행 한번 다녀오면 그 기억으로 살아가는 거라고 하잖아요.<br/>
+                    그니까 다들 그렇게 여행가려고 하나봐요. 저도 그 기억으로 오늘 하루를 살아갑니다. 모두 힘내세요!
+                </div>
+                <div class="board-btn-box">
+                    <button class="btn-edit">삭제</button>
+                    <button class="btn-edit">
+                        <a href="/mystory/edit" title="수정">수정</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script>
+            $('.header').addClass('white-header');
+        </script>
+    </body>
+</html>

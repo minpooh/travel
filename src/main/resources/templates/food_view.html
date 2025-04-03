@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="food-wrap">
+            <div class="container mb-3">
+                <div class="food-top">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="food-image" style="background-image: url('/asset/image/food1.jpeg');"></div>
+                        </div>
+                        <div class="col-md-6 border-start">
+                            <ul class="food-info">
+                                <li class="name">
+                                    <span class="name-badge">미슐랭 2025</span>
+                                    <p class="mt-3">툭툭누들타이</p>
+                                </li>
+                                <li class="info location">
+                                    <p>서울 마포구 성미산로 161-8 2층</p>
+                                </li>
+                                <li class="info time">
+                                    <p>
+                                        11:30 - 21:00<br/>
+                                        15:30 - 17:00 B.T<br/>
+                                        14:50, 20:20 L.O<br/>
+                                        수요일 정기휴무
+                                    </p>
+                                </li>
+                                <li class="info number">
+                                    <p>0507-1400-5130</p>
+                                </li>
+                                <li class="info store">
+                                    <p>예약, 남/녀 화장실 구분, 포장, 배달</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-middle">
+                    <div class="title justify-content-start">MENU</div>
+                    <div class="row menu">
+                        <div class="col-md-3">
+                            <div class="category">Best</div>
+                            <div>
+                                <div class="img" style="background-image: url('/asset/image/foodstory1.png');"></div>
+                                <strong class="text">똠양꿍</strong>
+                            </div>
+                        </div>
+                        <div class="col-md-9 tried">
+                            <div class="category">Tried</div>
+                            <ul class="item">
+                                <li>
+                                    <div class="img" style="background-image: url('/asset/image/foodstory2.jpg');"></div>
+                                    <strong class="text">뿌님팟퐁커리</strong>
+                                </li>
+                                <li>
+                                    <div class="img" style="background-image: url('/asset/image/foodstory3.jpg');"></div>
+                                    <strong class="text">연남갈비국수</strong>
+                                </li>
+                                <li>
+                                    <div class="img" style="background-image: url('/asset/image/foodstory4.jpg');"></div>
+                                    <strong class="text">텃만꿍</strong>
+                                </li>
+                                <li>
+                                    <div class="img" style="background-image: url('/asset/image/food1.jpeg');"></div>
+                                    <strong class="text">코코넛빤</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-middle">
+                    2025 미슐랭 빕구르망 9년 연속 선정!<br/>
+                    뿌팟퐁커리, 팟타이, 똠얌꿍, 갈비쌀국수, 랭쎕 등 대표 메뉴와 다양한 재료를 이용한 시즌 메뉴가 준비되어 있습니다.
+                </div>
+                <div class="food-middle">
+                    <div class="title">LOCATION</div>
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div class="list-button">
+                <a href="#" class="btn btn-outline-dark" title="목록">목록</a>
+            </div>
+        </div>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b57c8b5232cf236a42c45d8387b07430"></script>
+        <script>
+            $('.header').addClass('white-header');
+        </script>
+        <script>
+            var container = document.getElementById('map');
+            var options = { 
+                center: new kakao.maps.LatLng(37.56514740000001, 126.9240143), 
+                level: 3 
+            };
+
+            var map = new kakao.maps.Map(container, options); 
+
+            var markerPosition  = new kakao.maps.LatLng(37.56514740000001, 126.9240143);
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+        </script>
+    </body>
+</html>

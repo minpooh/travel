@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="travel-wrap">
+            <div class="travel-content" style="background-image: url('/asset/image/singapore1.jpg');">
+                <div class="background-dark"></div>
+                <div class="name-box">SINGAPORE</div>
+                <div class="text">
+                    <div class="desc">
+                        Island Country and City-state
+                    </div>
+                    <div class="title">
+                        SINGAPORE
+                    </div>
+                    <button class="btn-hover-border">
+                        <a href="/travel/view">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="travel-content" style="background-image: url('/asset/image/observatory.jpeg');">
+                <div class="background-dark"></div>
+                <div class="name-box">AUSTRAILA</div>
+                <div class="text">
+                    <div class="desc">
+                        Island Country and City-state
+                    </div>
+                    <div class="title">
+                        AUSTRAILA
+                    </div>
+                    <button class="btn-hover-border">
+                        <a href="/travel/view">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="travel-content" style="background-image: url('/asset/image/singapore1.jpg');">
+                <div class="background-dark"></div>
+                <div class="name-box">JAPAN</div>
+                <div class="text">
+                    <div class="desc">
+                        Island Country and City-state
+                    </div>
+                    <div class="title">
+                        JAPAN
+                    </div>
+                    <button class="btn-hover-border">
+                        <a href="/travel/view">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script>
+            $('.header').addClass('white-header');
+        </script>
+    </body>
+</html>

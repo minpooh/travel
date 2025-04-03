@@ -18,6 +18,7 @@
 @include font-face($font-hero-name, $font-hero-path + $font-hero-name + "Gothic-Regular", 400);
 @include font-face($font-hero-name, $font-hero-path + $font-hero-name + "Gothic-Bold", 600);
 
+@include font-face('TourEasy', '../asset/fonts/TourEasy.otf');
 
 .font-hero {
 	font-family: $font-hero-name;
@@ -125,3 +126,4 @@
 .letter-spacing-1 {
 	letter-spacing: -.75px;
 }
+

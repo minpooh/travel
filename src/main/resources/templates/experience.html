@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="exp-wrap">
+            <div class="exp-top">
+                <div class="text">제가 경험했던 다양한 경험들을 한눈에 만나보세요.</div>
+                <div class="box">
+                    <div class="cate-box">
+                        <ul>
+                            <li>
+                                <button class="btn-cate active">All</button>
+                            </li>
+                            <li>
+                                <button class="btn-cate">Dinner</button>
+                            </li>
+                            <li>
+                                <button class="btn-cate">Barbecue</button>
+                            </li>
+                            <li>
+                                <button class="btn-cate">Swim</button>
+                            </li>
+                            <li>
+                                <button class="btn-cate">Desert</button>
+                            </li>
+                            <li>
+                                <button class="btn-cate">Animal</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <form>
+                        <div class="box-search">
+                            <input type="text" name="" placeholder="검색어를 입력해주세요."/>
+                            <button class="btn-search">
+                                <img src="/asset/image/btn_search.svg"/>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="exp-container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="exp-box" data-bs-toggle="modal" data-bs-target="#experience1">
+                            <div class="exp-image" style="background-image: url('/asset/image/desert.jpeg'); background-position: top; background-size: 115%;"></div>
+                            <div class="exp-tag">
+                                #사막 #캠핑 #은하수 #별똥별
+                            </div>
+                            <div class="exp-text">
+                                <div class="title">Desert</div>
+                                <div class="desc">
+                                    사막에서 캠핑하는 낭만, 그안에서 가장 인상 깊었던 인생의 첫 유성 발견의 순간이 사진으로 담겼어요!
+                                </div>
+                                <div class="date">
+                                    2024.09.03 - 2024.09.05
+                                </div>
+                                <div class="exp-price">
+                                    <span class="price">536 </span>AUD
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="exp-image" style="background-image: url('/asset/image/cruise.jpeg');"></div>
+                        <div class="exp-tag">
+                            #크루즈 #디너파티
+                        </div>
+                        <div class="exp-text">
+                            <div class="title">Cruise</div>
+                            <div class="desc">
+                                크루즈에서 호주 시드니의 랜드마크인 오페라하우스와 하버브릿지를 바라보며 즐기는 디너 파티
+                            </div>
+                            <div class="date">
+                                2024.03.17
+                            </div>
+                            <div class="exp-price">
+                                <span class="price">475 </span>AUD
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="exp-image" style="background-image: url('/asset/image/barbecue.jpeg');"></div>
+                        <div class="exp-tag">
+                            #바베큐 #바다
+                        </div>
+                        <div class="exp-text">
+                            <div class="title">Barbecue</div>
+                            <div class="desc">
+                                드넓은 바다를 바라보며 해변가에서 즐기는 색다른 바베큐파티, 우리가 준비할건 숯도아니고, 철판도 아니고 오직 고기뿐!!
+                            </div>
+                            <div class="date">
+                                2023.11.01 - 2024.10.05
+                            </div>
+                            <div class="exp-price">
+                                <span class="price">Free </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="exp-image" style="background-image: url('/asset/image/infinitypool.jpeg');"></div>
+                        <div class="exp-tag">
+                            #인피니티풀 #마리나베이샌즈
+                        </div>
+                        <div class="exp-text">
+                            <div class="title">Infinity Pool</div>
+                            <div class="desc">
+                                싱가포르의 랜드마크인 마리나베이 샌즈 호텔의 유명 관광명소인 세계 최대 규모의 루프탑 인피니티 풀에서 수영하기!
+                            </div>
+                            <div class="date">
+                                2023.02.12
+                            </div>
+                            <div class="exp-price">
+                                <span class="price">830 </span>SGD
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="exp-image" style="background-image: url('/asset/image/wildpark.jpeg');"></div>
+                        <div class="exp-tag">
+                            #캥거루 #코알라 #교감
+                        </div>
+                        <div class="exp-text">
+                            <div class="title">Wildpark</div>
+                            <div class="desc">
+                                가둬놓는 동물원이 아닌 자연속에서 지내는 동물들에게 먹이도 주고 만져보며 나누는 교감은 새로운 경험을 맛보게 해줘요.
+                            </div>
+                            <div class="date">
+                                2024.03.09
+                            </div>
+                            <div class="exp-price">
+                                <span class="price">98,000 </span>KRW
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="exp-image" style="background-image: url('/asset/image/infinitypool.jpeg');"></div>
+                        <div class="exp-tag">
+                            #스카이다이빙 #프라하 #유럽여행
+                        </div>
+                        <div class="exp-text">
+                            <div class="title">Sky Diving</div>
+                            <div class="desc">
+                                하늘에서 뛰어내리는 잊을 수 없는 아드레날린 경험! 하늘에서 체코를 바라보며 구름을 만져보세요 평생 기억에 남는 순간이 될거에요!
+                            </div>
+                            <div class="date">
+                                2019.06.03
+                            </div>
+                            <div class="exp-price">
+                                <span class="price">350 </span>EUR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <th:block th:include="/modal_experience"></th:block>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script>
+            //header
+            $('.header').addClass('white-header');
+
+            //modal
+            var exp1 = document.getElementById('experience1')
+            exp1.addEventListener('shown.bs.modal', function(){})
+        </script>
+    </body>
+</html>

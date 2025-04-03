@@ -1,0 +1,126 @@
+.board-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+.board-top {
+    .title {
+        font-size: 45px;
+        line-height: 60px;
+        font-weight: 300;
+        text-align: center;
+        padding: 70px 0 50px;
+    }
+    .text {
+        font-size: 45px;
+        line-height: 60px;
+        font-weight: 300;
+        text-align: center;
+        padding: 120px 0;
+    }
+    .info {
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 0 50px 0;
+    }
+    .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .box-search {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 300px;
+            border-bottom: 1px solid $grey;
+            input {
+                width: 100%;
+                padding: 12px 0;
+                border: 0;
+                outline: none;
+            }
+            .btn-search {
+                padding: 10px 0 10px 10px;
+                img {
+                    width: 21px;
+                    height: 21px;
+                }
+            }
+        }
+    }
+}
+.board-container {
+    margin: 20px 0 100px;
+    border-top: 1px solid $body-color;
+    .board-list {
+        .table {
+            thead {
+                tr {
+                    border-bottom: 1px solid $body-color;
+                }
+            }
+            tbody {
+                tr {
+                    border-bottom: 1px solid $bone;
+                }
+            }
+            th, td {
+                padding: 20px 15px;
+            }
+        }
+    }
+    .board-form {
+        margin: 20px 0;
+    }
+    .board-editor {
+        font-size: 16px;
+        margin-bottom: 50px;
+        height: 500px;
+    }
+    .board-view {
+        padding: 50px 10px;
+    }
+    .board-btn-box{
+        display: flex;
+        justify-content: end;
+        .btn-edit {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: $primary;
+            color: #fff;
+            margin-left: 10px;
+            a {
+                color: #fff;
+            }
+        }
+    }
+    .board-pagination {
+        .pagination {
+            .page-link {
+                display: flex;
+                align-items: center;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 0;
+                color: $primary;
+                &:hover {
+                    color: $primary;
+                    background-color: transparent;
+                }
+                &:focus {
+                    color: $primary;
+                    background-color: transparent;
+                    box-shadow: none;
+                }
+            }
+            .active {
+                .page-link {
+                    background-color: $primary;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+

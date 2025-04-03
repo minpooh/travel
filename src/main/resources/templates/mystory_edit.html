@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <th:block th:include="/common/head"></th:block>
+    </head>
+    <body>
+        <th:block th:include="/layout/header"></th:block>
+        <div class="board-wrap">
+            <div class="board-top">
+                <div class="title">
+                    MY STORY
+                </div>
+            </div>
+            <div class="board-container">
+                <form>
+                    <div class="board-form">
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <label>이메일</label>
+                                <input type="email" class="form-control" value="minjoung1510@gmail.com"/>
+                            </div>
+                            <div class="col-6">
+                                <label>비밀번호</label>
+                                <input type="password" class="form-control" value="12341234"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>제목</label>
+                                <input type="text" class="form-control" value="오늘도 힘차게 살아가봅시다.!"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="board-editor" id="editor">
+                        <p>오늘도 힘차게 살아가봅시다.! 여행 한번 다녀오면 그 기억으로 살아가는 거라고 하잖아요.</p>
+                        <p>그니까 다들 그렇게 여행가려고 하나봐요. 저도 그 기억으로 오늘 하루를 살아갑니다. 모두 힘내세요!</p>
+                    </div>
+                    <div class="board-btn-box justify-content-center">
+                        <button type="submit" class="btn-edit">저장</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <th:block th:include="/layout/footer"></th:block>
+        <th:block th:include="/common/script"></th:block>
+        <script>
+            $('.header').addClass('white-header');
+            const quill = new Quill('#editor', {
+                theme: 'snow'
+            });
+        </script>
+    </body>
+</html>
