@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <th:block th:include="/common/head"></th:block>
-    </head>
+    <head th:replace="~{common/head :: headFragment}"></head>
     <body>
-        <th:block th:include="/layout/header"></th:block>
+        <th:block th:replace="~{layout/header :: headerFragment}"></th:block>
         <div class="food-wrap">
             <div class="container mb-3">
                 <div class="food-top">
@@ -85,8 +83,8 @@
                 <a href="/food" class="btn btn-outline-dark" title="목록">목록</a>
             </div>
         </div>
-        <th:block th:include="/layout/footer"></th:block>
-        <th:block th:include="/common/script"></th:block>
+        <th:block th:replace="~{layout/footer :: footerFragment}"></th:block>
+        <th:block th:replace="~{common/script :: scriptFragment}"></th:block>
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b57c8b5232cf236a42c45d8387b07430"></script>
         <script>
             $('.header').addClass('white-header');

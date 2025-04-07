@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <th:block th:include="/common/head"></th:block>
-    </head>
+    <head th:replace="~{common/head :: headFragment}"></head>
     <body>
-        <th:block th:include="/layout/header"></th:block>
+        <th:block th:replace="~{layout/header :: headerFragment}"></th:block>
         <div class="board-wrap">
             <div class="board-top">
                 <div class="title">
@@ -38,8 +36,8 @@
                 </form>
             </div>
         </div>
-        <th:block th:include="/layout/footer"></th:block>
-        <th:block th:include="/common/script"></th:block>
+        <th:block th:replace="~{layout/footer :: footerFragment}"></th:block>
+        <th:block th:replace="~{common/script :: scriptFragment}"></th:block>
         <script>
             $('.header').addClass('white-header');
 

@@ -1,15 +1,17 @@
-<div class="location-modal modal fade" id="delete" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">삭제</h5>
-            </div>
-            <div class="modal-body">
-                <p id="spot1location">정말 삭제하시겠습니까? 삭제후에는 복구가 절대 불가능합니다.</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary mr-2" data-bs-toggle="modal" data-bs-target="#delete">삭제</button>
-                <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">닫기</button>
+<div th:fragment="deleteModal">
+    <div class="location-modal modal fade" id="delete" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">삭제</h5>
+                </div>
+                <div class="modal-body">
+                    <p>정말 삭제하시겠습니까? 삭제후에는 복구가 절대 불가능합니다.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary mr-2" data-bs-toggle="modal" data-bs-target="#delete">삭제</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">닫기</button>
+                </div>
             </div>
         </div>
     </div>

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <th:block th:include="/common/head"></th:block>
-    </head>
+    <head th:replace="~{common/head :: headFragment}"></head>
     <body>
-        <th:block th:include="/layout/header"></th:block>
+        <th:block th:replace="~{layout/header :: headerFragment}"></th:block>
         <div class="exp-wrap">
             <div class="exp-top">
                 <div class="text">제가 경험했던 다양한 경험들을 한눈에 만나보세요.</div>
@@ -158,9 +156,9 @@
                 </div>
             </div>
         </div>
-        <th:block th:include="/modal_experience"></th:block>
-        <th:block th:include="/layout/footer"></th:block>
-        <th:block th:include="/common/script"></th:block>
+        <div th:replace="modal_experience :: experienceModal"></div>
+        <th:block th:replace="~{layout/footer :: footerFragment}"></th:block>
+        <th:block th:replace="~{common/script :: scriptFragment}"></th:block>
         <script>
             //header
             $('.header').addClass('white-header');

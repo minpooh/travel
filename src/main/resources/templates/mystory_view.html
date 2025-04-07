@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <th:block th:include="/common/head"></th:block>
-    </head>
+    <head th:replace="~{common/head :: headFragment}"></head>
     <body>
-        <th:block th:include="/layout/header"></th:block>
+        <th:block th:replace="~{layout/header :: headerFragment}"></th:block>
         <div class="board-wrap">
             <div class="board-top">
                 <div class="text pb-0">
@@ -27,9 +25,9 @@
                 </div>
             </div>
         </div>
-        <th:block th:include="/modal_delete"></th:block>
-        <th:block th:include="/layout/footer"></th:block>
-        <th:block th:include="/common/script"></th:block>
+        <div th:replace="modal_delete :: deleteModal"></div>
+        <th:block th:replace="~{layout/footer :: footerFragment}"></th:block>
+        <th:block th:replace="~{common/script :: scriptFragment}"></th:block>
         <script>
             //header
             $('.header').addClass('white-header');
