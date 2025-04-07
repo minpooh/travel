@@ -1,6 +1,32 @@
 .food-wrap {
     margin-top: 90px;
     margin-bottom: 150px;
+    .pagination {
+        .page-link {
+            display: flex;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 0;
+            color: $primary;
+            &:hover {
+                color: $primary;
+                background-color: transparent;
+            }
+            &:focus {
+                color: $primary;
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+        .active {
+            .page-link {
+                background-color: $primary;
+                color: #fff;
+            }
+        }
+    }
 }
 .food-top {
     padding-top: 50px;

@@ -11404,6 +11404,28 @@ template {
   margin-top: 90px;
   margin-bottom: 150px;
 }
+.food-wrap .pagination .page-link {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  color: #262f1e;
+}
+.food-wrap .pagination .page-link:hover {
+  color: #262f1e;
+  background-color: transparent;
+}
+.food-wrap .pagination .page-link:focus {
+  color: #262f1e;
+  background-color: transparent;
+  box-shadow: none;
+}
+.food-wrap .pagination .active .page-link {
+  background-color: #262f1e;
+  color: #fff;
+}
 
 .food-top {
   padding-top: 50px;
@@ -11873,14 +11895,10 @@ template {
   display: flex;
   justify-content: end;
 }
-.board-container .board-btn-box .btn-edit {
-  font-size: 18px;
-  padding: 10px 20px;
-  background-color: #262f1e;
-  color: #fff;
+.board-container .board-btn-box .btn {
   margin-left: 10px;
 }
-.board-container .board-btn-box .btn-edit a {
+.board-container .board-btn-box .btn a {
   color: #fff;
 }
 .board-container .board-pagination .pagination .page-link {
@@ -12305,6 +12323,9 @@ template {
   height: 150px;
   border-radius: 1rem;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .travel-schedule .schedule-plan::before {
   content: "";

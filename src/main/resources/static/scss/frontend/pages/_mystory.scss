@@ -83,11 +83,7 @@
     .board-btn-box{
         display: flex;
         justify-content: end;
-        .btn-edit {
-            font-size: 18px;
-            padding: 10px 20px;
-            background-color: $primary;
-            color: #fff;
+        .btn {
             margin-left: 10px;
             a {
                 color: #fff;

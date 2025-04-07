@@ -20,17 +20,22 @@
                     그니까 다들 그렇게 여행가려고 하나봐요. 저도 그 기억으로 오늘 하루를 살아갑니다. 모두 힘내세요!
                 </div>
                 <div class="board-btn-box">
-                    <button class="btn-edit">삭제</button>
-                    <button class="btn-edit">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">삭제</button>
+                    <button class="btn btn-primary">
                         <a href="/mystory/edit" title="수정">수정</a>
                     </button>
                 </div>
             </div>
         </div>
+        <th:block th:include="/modal_delete"></th:block>
         <th:block th:include="/layout/footer"></th:block>
         <th:block th:include="/common/script"></th:block>
         <script>
+            //header
             $('.header').addClass('white-header');
+            //modal
+            var exp1 = document.getElementById('delete')
+            exp1.addEventListener('shown.bs.modal', function(){})
         </script>
     </body>
 </html>
