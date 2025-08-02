@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="~{common/head :: headFragment}"></head>
+    <body>
+        <th:block th:replace="~{layout/header :: headerFragment}"></th:block>
+        <div class="travel-wrap">
+            <div class="travel-slide-container">
+                <ul class="travel-slide">
+                    <li style="background-image: url('/asset/image/japan.jpeg')"></li>
+                    <li style="background-image: url('/asset/image/singapore2.jpg')"></li>
+                    <li style="background-image: url('/asset/image/singapore3.jpg')"></li>
+                    <li style="background-image: url('/asset/image/singapore4.jpg')"></li>
+                    <li style="background-image: url('/asset/image/singapore5.jpg')"></li>
+                </ul>
+                <div class="travel-slide-text">
+                    <div class="travel-slide-desc">
+                        Island country in East Asia
+                    </div>
+                    <div class="travel-slide-title">
+                        JAPAN
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <div class="travel-flag">
+                    <img src="/asset/image/flag_japan.png"/>
+                </div>
+                <div class="travel-country mb-2">일본</div>
+                <div class="travel-about mb-4">
+                    고대부터 독특한 문화를 형성해 온 나라로, 사무라이 전통과 현대 기술이 공존하는 여행지<br/>
+                    온천과 사계절마다 변화하는 자연 경관도 특별한 경험을 선사하며, 가까운 거리와 편리한 교통으로 부담 없이 떠날 수 있는 일본<br/>
+                    다양한 여행정보들과 2박 3일 알차게 다녀온 일정을 한눈에 볼 수 있습니다.
+                </div>
+                <div class="travel-info mb-4">
+                    <div class="row justify-content-start">
+                        <div class="col">
+                            <div class="info-title">LANGUAGE</div>
+                            <div class="info-text">일본어</div>
+                        </div>
+                        <div class="col">
+                            <div class="info-title">MONEY</div>
+                            <div class="info-text">일본 엔</div>
+                        </div>
+                        <div class="col">
+                            <div class="info-title">AIRPLANE</div>
+                            <div class="info-text">직항 2시간 15분</div>
+                        </div>
+                        <div class="col">
+                            <div class="info-title">VISA</div>
+                            <div class="info-text">무비자 90일</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="travel-schedule">
+                    <div class="info-title">여행일정</div>
+                    <div class="accordion accordion-flush" id="travel-schedule-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingOne">
+                                <div>
+                                    <span>1일차</span>
+                                    <span class="date">2023-09-25 월요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseOne" aria-expanded="true" aria-controls="travel-schedule-collapseOne"></button>
+                            </div>
+                            <div id="travel-schedule-collapseOne" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingOne" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                    <div class="schedule-airplane">
+                                        <div class="airplane-info depart">
+                                            <strong class="airplane-time">14:10</strong>
+                                            <p class="airplne-date">
+                                                2023.09.25(월요일)</br>
+                                                인천(ICN)출발
+                                            </p>
+                                        </div>
+                                        <div class="airplane-flighttime">
+                                            <strong class="airline">AC756</strong>
+                                            <p class="flighttime">01시간40분</p>
+                                        </div>
+                                        <div class="airplane-info arrive">
+                                            <strong class="airplane-time">15:50</strong>
+                                            <p class="airplne-date">
+                                                2023.09.25(월요일)</br>
+                                                오사카(KIX)도착
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan plan-start">
+                                        <div class="title">[14:10] 인천국제공항 출발</div>
+                                    </div>
+                                    <div class="schedule-plan">
+                                        <div class="title">[15:50] 오사카 간사이공항 도착</div>
+                                        <div class="desc">
+                                            오사카 간사이공항 도착 약 2시간
+                                        </div>
+                                    </div>
+                                    <div class="schedule-plan plan-end">
+                                        <div class="title">호텔 체크인 투숙 및 휴식</div>
+                                    </div>
+                                    <div class="schedule-info hotel">
+                                        <strong>호텔</strong>
+                                    </div>
+                                    <div class="schedule-info meal">
+                                        <strong>
+                                            [조식] 없음
+                                        </strong>
+                                        <strong>
+                                            [중식] 없음
+                                        </strong>
+                                        <strong>
+                                            [석식] 장어덮밥
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingTwo">
+                                <div>
+                                    <span>2일차</span>
+                                    <span class="date">2023-09-26 화요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseTwo" aria-expanded="true" aria-controls="travel-schedule-collapseTwo"></button>
+                            </div>
+                            <div id="travel-schedule-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingTwo" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="travel-schedule-headingThree">
+                                <div>
+                                    <span>3일차</span>
+                                    <span class="date">2023-09-27 수요일</span>
+                                </div>
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#travel-schedule-collapseThree" aria-expanded="true" aria-controls="travel-schedule-collapseThree"></button>
+                            </div>
+                            <div id="travel-schedule-collapseThree" class="accordion-collapse collapse show" aria-labelledby="travel-schedule-headingThree" data-bs-parent="#travel-schedule-accordion">
+                                <div class="accordion-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-button">
+                    <a href="/travel" class="btn btn-outline-dark" title="목록">목록</a>
+                </div>
+            </div>
+        </div>
+        <th:block th:replace="~{layout/footer :: footerFragment}"></th:block>
+        <th:block th:replace="~{common/script :: scriptFragment}"></th:block>
+        <script>
+            $('.header').addClass('white-header');
+        </script>
+        <script> 
+            window.addEventListener("DOMContentLoaded", function () {
+                let slides = document.querySelectorAll(".travel-slide > li");
+                let totalSlides = slides.length;
+                let currentIndex = 0;
+
+                function showNextSlide() {
+                    let prevIndex = currentIndex;
+                    currentIndex = (currentIndex + 1) % totalSlides;
+
+                    slides[prevIndex].classList.remove("active");
+                    slides[prevIndex].style.zIndex = "1";
+
+                    slides[currentIndex].classList.add("active");
+                    slides[currentIndex].style.zIndex = "10";
+
+                    setTimeout(showNextSlide, 3000);
+                }
+
+                slides[currentIndex].classList.add("active");
+                slides[currentIndex].style.zIndex = "10";
+
+                setTimeout(showNextSlide, 3000);
+            });
+
+
+        </script>
+    </body>
+</html>

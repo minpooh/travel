@@ -15,9 +15,14 @@ public class MainController {
         return "travel";
     }
 
-    @GetMapping(value = "/travel/view")
-    public String travelView() {
-        return "travel_view";
+    @GetMapping(value = "/travel/singapore")
+    public String travelSingapore() {
+        return "travel_singapore";
+    }
+
+    @GetMapping(value = "/travel/japan")
+    public String travelJapan() {
+        return "travel_japan";
     }
 
     @GetMapping(value = "/food")
