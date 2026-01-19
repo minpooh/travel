@@ -14,12 +14,12 @@
                             <h3 class="main-section-title">
                                 TRAVEL STORY
                             </h3>
-                            <div class="main-section-text">
+                            <div class="main-section-text p-0">
                                 최근 여행지 소식을 확인해보세요.<br/>
                                 여행을 준비하고 있다면 좋은 정보를 얻을 수 있고,<br/>
                                 여러가지 에피소드도 함께 즐기실 수 있습니다.
                             </div>
-                            <a href="/travel" class="d-flex align-middle mt-5">
+                            <a href="/travel" class="d-flex align-middle mt-md-5 mt-3">
                                 MORE
                                 <span class="material-icons ml-2">double_arrow</span>
                             </a>
@@ -29,7 +29,7 @@
                         <div class="travel-section-slide">
                             <div class="swiper colSwiper">
                                 <div class="swiper-wrapper">
-                                    <th:block th:each="num : ${#numbers.sequence(1,10)}">
+                                    <th:block th:each="num : ${#numbers.sequence(1,5)}">
                                         <div class="swiper-slide">
                                             <a href="/travel/view" title="싱가포르">
                                                 <div class="swiper-slide-image" style="background-image:url('/asset/image/gardensbythebay.jpeg');">
@@ -52,6 +52,19 @@
                                                     <span class="country">Austraila</span>
                                                     <span class="desc">
                                                         워킹홀리데이로 호주를 다녀왔어요! 쉽지만은 않았던 시드니부터 멜버른까지의 이야기 궁금하시지 않으신가요?
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="/travel/view" title="일본">
+                                                <div class="swiper-slide-image" style="background-image:url('/asset/image/japan.jpeg');">
+                                                    <div class="date">2025.12.08~2025.12.12</div>
+                                                </div>
+                                                <div class="swiper-slide-text">
+                                                    <span class="country">Japan</span>
+                                                    <span class="desc">
+                                                        삿포로, 도쿄, 오사카 등 일본의 다양한 도시를 다녀왔어요. 일본의 문화와 감성을 느껴보세요!
                                                     </span>
                                                 </div>
                                             </a>
@@ -219,6 +232,14 @@
                     disableOnInteraction: false
                 },
                 speed: 600,
+                breakpoints: {
+                    320: {
+                        spaceBetween: 20
+                    },
+                    768: {
+                        spaceBetween: 45
+                    }
+                }
             });
 
             //Food story section

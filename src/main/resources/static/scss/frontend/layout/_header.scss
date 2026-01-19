@@ -15,6 +15,7 @@
     }
 
     .header-wrap{
+        width: 100%;
         max-width: 1920px;
         height: 90px;
         margin: 0 auto;
@@ -68,6 +69,18 @@
 .text-white-header {
     a {
         color: $light;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        .header-wrap {
+            padding: 0;
+            .nav {
+                display: none;
+            }
+        }
     }
 }
 

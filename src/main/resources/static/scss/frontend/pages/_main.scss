@@ -223,6 +223,8 @@
 
 @media (min-width: 1024px) {
 
+    
+
     .main-experience {
         ul {
             display: flex;
@@ -294,6 +296,60 @@
     }
 }
 
+@media (max-width: 768px) {
+    .main-section {
+        min-height: 80vh;
+        padding-top: 72px;
 
+        .main-section-title {
+            font-size: 34px;
+        }
+        .main-section-text {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            padding: 0 2rem;
+        }
+    }
+    .main-section-col {
+        padding-top: 80px;
+    
+        .main-section-desc {
+            .main-section-title {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .travel-section-slide {
+        margin-top: 3rem;
+        margin-bottom: 50px;
+    }
+    .colSwiper {
+        height: 475px;
+        .swiper-slide {
+            width: 90%!important;
+            height: 100%;
+    
+            a {
+                display: block;
+            }
+        }
+    }
+    .food-section-slide {
+        padding-bottom: 4rem;
+    }
+
+    .main-experience {
+        padding-bottom: 100px;
+    }
+    
+    .photospot-section-slide {
+        padding-bottom: 4rem;
+        .cardSwiper {
+            width: 80%;
+            height: 55vw;
+        }
+    }
+    
+}
 
 

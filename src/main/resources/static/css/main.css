@@ -11169,6 +11169,7 @@ template {
   color: #262f1e;
 }
 .header .header-wrap {
+  width: 100%;
   max-width: 1920px;
   height: 90px;
   margin: 0 auto;
@@ -11221,6 +11222,14 @@ template {
   color: #e4e2df;
 }
 
+@media (max-width: 768px) {
+  .header .header-wrap {
+    padding: 0;
+  }
+  .header .header-wrap .nav {
+    display: none;
+  }
+}
 .exp-wrap {
   max-width: 1400px;
   margin: 0 auto;
@@ -11816,6 +11825,53 @@ template {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .main-section {
+    min-height: 80vh;
+    padding-top: 72px;
+  }
+  .main-section .main-section-title {
+    font-size: 34px;
+  }
+  .main-section .main-section-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0 2rem;
+  }
+  .main-section-col {
+    padding-top: 80px;
+  }
+  .main-section-col .main-section-desc .main-section-title {
+    margin-bottom: 30px;
+  }
+  .travel-section-slide {
+    margin-top: 3rem;
+    margin-bottom: 50px;
+  }
+  .colSwiper {
+    height: 475px;
+  }
+  .colSwiper .swiper-slide {
+    width: 90% !important;
+    height: 100%;
+  }
+  .colSwiper .swiper-slide a {
+    display: block;
+  }
+  .food-section-slide {
+    padding-bottom: 4rem;
+  }
+  .main-experience {
+    padding-bottom: 100px;
+  }
+  .photospot-section-slide {
+    padding-bottom: 4rem;
+  }
+  .photospot-section-slide .cardSwiper {
+    width: 80%;
+    height: 55vw;
+  }
+}
 .board-wrap {
   max-width: 1200px;
   margin: 0 auto;
