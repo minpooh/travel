@@ -5,7 +5,7 @@ WORKDIR /home/gradle/project
 RUN ./gradlew build -x test
 
 # 2단계: 실행 환경 (JAR 복사해서 실행)
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk
 WORKDIR /app
 COPY --from=build /home/gradle/project/build/libs/travel-0.0.1-SNAPSHOT.jar /app/app.jar
 EXPOSE 8081
