@@ -166,6 +166,12 @@
             //modal
             var exp1 = document.getElementById('experience1')
             exp1.addEventListener('shown.bs.modal', function(){})
+
+            //btn-cate action
+            $(document).on('click', '.btn-cate', function(){
+                $('.btn-cate').removeClass('active');
+                $(this).addClass('active');
+            });
         </script>
     </body>
 </html>

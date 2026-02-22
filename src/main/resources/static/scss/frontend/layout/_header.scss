@@ -75,10 +75,27 @@
 
 @media (max-width: 768px) {
     .header {
+        height: 80px;
+        a {
+            line-height: 1.5rem;
+        }
         .header-wrap {
+            height: 100%;
+            max-width: 100%;
             padding: 0;
             .nav {
                 display: none;
+            }
+            .logo {
+                top: 55%;
+                transform: translate(-50%,-50%);
+                .name {
+                    font-size: 24px;
+                    letter-spacing: 0.25rem;
+                }
+                .project {
+                    font-size: 1rem;
+                }
             }
         }
     }

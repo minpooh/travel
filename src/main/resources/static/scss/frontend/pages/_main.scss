@@ -297,6 +297,10 @@
 }
 
 @media (max-width: 768px) {
+    .main {
+        width: 100%;
+        overflow: hidden;
+    }
     .main-section {
         min-height: 80vh;
         padding-top: 72px;

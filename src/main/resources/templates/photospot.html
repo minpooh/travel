@@ -13,91 +13,91 @@
             <div class="container">
                 <div class="top-cate">
                     <ul>
-                        <li class="category active">전체</li>
-                        <li class="category">국내</li>
-                        <li class="category">국외</li>
+                        <li class="category cate-action active" data-target="all">전체</li>
+                        <li class="category cate-action" data-target="domestic">국내</li>
+                        <li class="category cate-action" data-target="foreign">국외</li>
                     </ul>
                 </div>
                 <div class="photo-list">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/desert_.jpeg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location1">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/obsevatoryhill.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location2">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/beach.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location3">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/kyoto.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location4">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/osaka.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location5">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="domestic">
                             <div class="photo" style="background-image: url('/asset/image/gunsan.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location6">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/policeoffice.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location7">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="domestic">
                             <div class="photo" style="background-image: url('/asset/image/gangneung.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location8">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/infinitypool.jpeg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location9">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/desert.jpeg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location10">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/bluemountain.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location11">위치보기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col cate-action-target" data-target="foreign">
                             <div class="photo" style="background-image: url('/asset/image/kyotoriver.jpg');">
                                 <div class="hover-box">
                                     <button type="button" class="btn-location" data-bs-toggle="modal" data-bs-target="#location12">위치보기</button>
@@ -139,6 +139,22 @@
                 navigator.clipboard.writeText(text.innerText) // 또는 text.textContent 사용 가능
                 alert("복사되었습니다.");
             }
+
+            //category action
+            $(document).on('click', '.cate-action', function(){
+                var target = $(this).data('target');
+                $('.cate-action').removeClass('active');
+                $(this).addClass('active');
+                if(target == 'domestic'){
+                    $('.cate-action-target').hide();
+                    $('.cate-action-target[data-target="domestic"]').show();
+                }else if(target == 'foreign'){
+                    $('.cate-action-target').hide();
+                    $('.cate-action-target[data-target="foreign"]').show();
+                } else {
+                    $('.cate-action-target').show();
+                }
+            });
         </script>
     </body>
 </html>

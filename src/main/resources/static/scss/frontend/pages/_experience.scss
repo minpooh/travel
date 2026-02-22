@@ -26,6 +26,7 @@
             .btn-cate {
                 padding: 8px 15px;
                 border: 0.5px solid $body-color;
+                transition: all 0.3s ease;
                 &:hover {
                     color: $white;
                     background-color: $body-color;
@@ -174,6 +175,38 @@
             width: 100%;
             margin-bottom: 20px;
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .exp-wrap {
+        width: 100%;
+        max-width: 100%;
+    }
+    .exp-top {
+        .text {
+            font-size: 1.75rem;
+            line-height: 2.5rem;
+            font-weight: 400;
+            padding: 50px 20px;
+        }
+        .box {
+            width: 100%;
+            overflow-x: scroll;
+            gap: 20px;
+            padding: 0 20px;
+        }
+    }
+    .exp-container {
+        width: 100%;
+        padding: 50px 20px;
+        .row {
+            gap: 50px;
+        }
+    }
+    .exp-image {
+        background-size: cover;
+        height: 60vw;
     }
 }
 

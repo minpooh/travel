@@ -56,7 +56,6 @@ body {
   text-align: left; 
   background-color: $white; 
   overflow-x: hidden;
-
 }
 
 // 키보드로 접근할 수 없는 엘리먼트의 focus outline을 숨깁니다.
@@ -491,4 +490,10 @@ template {
   display: none !important;
 }
 
+@media (max-width: 768px) {
+  body {
+      width: 100%;
+      overflow-x: hidden;
+  }
+}
 

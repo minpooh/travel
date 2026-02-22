@@ -119,4 +119,27 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .board-wrap {
+        width: 100%;
+        max-width: 100%;
+    }
+    .board-top {
+        .text {
+            font-size: 1.75rem;
+            line-height: 2.5rem;
+            font-weight: 400;
+            padding: 50px 20px;
+        }
+        .box {
+            width: 100%;
+            overflow-x: scroll;
+            gap: 20px;
+            padding: 0 20px;
+            .count-text {
+                width: 100%;
+            }
+        }
+    }
+}
 
